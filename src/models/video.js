@@ -6,17 +6,14 @@ module.exports = (sequelize, DataTypes) => {
       title: {
         type: DataTypes.STRING(1024),
         allowNull: false,
-        unique: true,
       },
       videoUrl: {
         type: DataTypes.STRING(1024),
         allowNull: false,
-        unique: true,
       },
       isWatched: {
         type: DataTypes.STRING(1024),
         allowNull: false,
-        unique: true,
       },
     },
     {}

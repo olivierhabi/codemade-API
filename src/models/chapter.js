@@ -6,22 +6,10 @@ module.exports = (sequelize, DataTypes) => {
       title: {
         type: DataTypes.STRING(1024),
         allowNull: false,
-        unique: true,
       },
       body: {
         type: DataTypes.STRING(1024),
         allowNull: false,
-        unique: true,
-      },
-      comment: {
-        type: DataTypes.STRING(1024),
-        allowNull: false,
-        unique: true,
-      },
-      materialUrl: {
-        type: DataTypes.STRING(1024),
-        allowNull: false,
-        unique: true,
       },
     },
     {}

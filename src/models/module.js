@@ -6,17 +6,10 @@ module.exports = (sequelize, DataTypes) => {
       title: {
         type: DataTypes.STRING(1024),
         allowNull: false,
-        unique: true,
       },
       body: {
         type: DataTypes.STRING(1024),
         allowNull: false,
-        unique: true,
-      },
-      chapters: {
-        type: DataTypes.STRING(1024),
-        allowNull: false,
-        unique: true,
       },
     },
     {}

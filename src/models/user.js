@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
       isAdmin: {
         type: DataTypes.STRING(15),
         allowNull: false,
-        unique: true,
       },
       username: {
         type: DataTypes.STRING(15),
@@ -25,17 +24,14 @@ module.exports = (sequelize, DataTypes) => {
       isProUser: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
       },
       subStartDate: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: false,
       },
       subEndDate: {
         type: DataTypes.STRING(15),
         allowNull: false,
-        unique: true,
       },
     },
     {}

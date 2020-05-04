@@ -1,13 +1,9 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Courses = sequelize.define(
-    "Courses",
+  const Comments = sequelize.define(
+    "Comments",
     {
-      title: {
-        type: DataTypes.STRING(1024),
-        allowNull: false,
-      },
-      body: {
+      comment: {
         type: DataTypes.STRING(1024),
         allowNull: false,
       },
@@ -15,13 +11,17 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
 
-  Courses.associate = (models) => {
+  Comments.associate = (models) => {
     // associations can be defined here
-    Courses.belongsTo(models.User, {
+    Comments.belongsTo(models.User, {
       foreignKey: "createdUserId",
       as: "owner",
     });
+    Comments.belongsTo(models.User, {
+      foreignKey: "courseId",
+      as: "ownerCourse",
+    });
   };
 
-  return Courses;
+  return Comments;
 };
