@@ -26,7 +26,7 @@ class AuthController {
         isAdmin,
         isProUser,
         subStartDate,
-        subEndDate,
+        subEndDate
       });
 
       const token = genToken({ username, email, isAdmin });
@@ -35,7 +35,7 @@ class AuthController {
         status: 201,
         message: "Signup successfull",
         token: token,
-        data: createUser,
+        data: createUser
       });
     } catch (e) {
       if (e.name === "SequelizeUniqueConstraintError") {
@@ -85,13 +85,13 @@ class AuthController {
         username: user.dataValues.username,
         email: user.dataValues.email,
         isAdmin: user.dataValues.isAdmin,
-        isProUser: user.dataValues.isAdmin.isProUser,
+        isProUser: user.dataValues.isAdmin.isProUser
       });
 
       return res.status(200).send({
         status: 200,
         message: "User is successfully logged in",
-        token: data,
+        token: data
       });
     } catch (error) {
       return res

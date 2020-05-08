@@ -15,15 +15,16 @@ class CourseController {
       const createCourse = await CourseService.addCourse({
         title: title,
         body: body,
-        createdUserId: id,
+        createdUserId: id
       });
 
       return res.status(201).send({
         status: 201,
         message: "Course created Successfully",
-        data: createCourse,
+        data: createCourse
       });
     } catch (error) {
+      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });

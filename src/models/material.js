@@ -3,42 +3,23 @@ module.exports = (sequelize, DataTypes) => {
   const Material = sequelize.define(
     "Material",
     {
-      title: {
+      materialUrl: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
-        unique: true,
-      },
-      MaterialUrl: {
-        type: DataTypes.STRING(1024),
-        allowNull: false,
-        unique: true,
-      },
-      chaptersId: {
-        type: DataTypes.STRING(1024),
-        allowNull: false,
-        unique: true,
-      },
+        allowNull: false
+      }
     },
     {}
   );
 
-  Material.associate = (models) => {
+  Material.associate = models => {
     // associations can be defined here
     Material.belongsTo(models.User, {
       foreignKey: "createdUserId",
-      as: "owner",
+      as: "owner"
     });
     Material.belongsTo(models.User, {
       foreignKey: "courseId",
-      as: "ownerCourse",
-    });
-    Material.belongsTo(models.User, {
-      foreignKey: "moduleId",
-      as: "ownerModule",
-    });
-    Material.belongsTo(models.User, {
-      foreignKey: "chapterId",
-      as: "ownerChapter",
+      as: "ownerCourse"
     });
   };
 

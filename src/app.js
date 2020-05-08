@@ -9,6 +9,8 @@ import ModuleRoutes from "./routes/ModuleRoutes";
 import ChapterRoutes from "./routes/ChapterRoutes";
 import CommentRoutes from "./routes/CommentRoutes";
 import VideoRoutes from "./routes/VideoRoutes";
+import MaterialRoutes from "./routes/MaterialRoutes";
+import RateRoutes from "./routes/RateRoutes";
 
 dotenv.config();
 
@@ -24,19 +26,21 @@ app.use("/api/module", ModuleRoutes);
 app.use("/api/chapter", ChapterRoutes);
 app.use("/api/comment", CommentRoutes);
 app.use("/api/video", VideoRoutes);
+app.use("/api/material", MaterialRoutes);
+app.use("/api/rate", RateRoutes);
 
 //Server start
 app.get("/", (req, res) => {
   console.log({ message: "Welcome CODEMADE-API" });
   return res.status(200).send({
     status: 200,
-    message: "Welcome CODEMADE-API",
+    message: "Welcome CODEMADE-API"
   });
 });
 
 models.sequelize
   .sync({
-    force: false,
+    force: false
   })
   .then(() =>
     app.listen(process.env.PORT, () =>
