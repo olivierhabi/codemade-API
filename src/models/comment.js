@@ -5,21 +5,21 @@ module.exports = (sequelize, DataTypes) => {
     {
       comment: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
-      },
+        allowNull: false
+      }
     },
     {}
   );
 
-  Comments.associate = (models) => {
+  Comments.associate = models => {
     // associations can be defined here
     Comments.belongsTo(models.User, {
       foreignKey: "createdUserId",
-      as: "owner",
+      as: "owner"
     });
-    Comments.belongsTo(models.User, {
+    Comments.belongsTo(models.Courses, {
       foreignKey: "courseId",
-      as: "ownerCourse",
+      as: "ownerCourse"
     });
   };
 

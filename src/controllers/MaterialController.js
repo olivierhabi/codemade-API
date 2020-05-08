@@ -35,7 +35,6 @@ class MaterialController {
         data: createMaterial
       });
     } catch (error) {
-      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });

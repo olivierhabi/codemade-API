@@ -36,7 +36,6 @@ class ModuleController {
         data: createModule
       });
     } catch (error) {
-      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });
@@ -50,8 +49,6 @@ class ModuleController {
    */
   static async GetModule(req, res) {
     const { id } = req.params;
-
-    console.log(id);
 
     try {
       const courseFind = await CourseService.getCourse(id);

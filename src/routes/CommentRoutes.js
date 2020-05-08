@@ -10,5 +10,6 @@ const router = Router();
 
 router.post("/", Auth, validate, CommentController.Create);
 router.get("/:id", Auth, CommentController.GetComment);
+router.get("/:id/course", Auth, CommentController.GetAllComment);
 
 export default router;

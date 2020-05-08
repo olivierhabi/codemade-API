@@ -14,6 +14,17 @@ class RateService {
     }
     next();
   }
+
+  static async getAllRate(id, next) {
+    try {
+      return await database.Rating.findAll({
+        where: { courseId: id }
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
 }
 
 export default RateService;

@@ -25,6 +25,19 @@ class CommentService {
     }
     next();
   }
+
+  static async getAllComment(id, next) {
+    try {
+      return await database.Comments.findAll({
+        where: {
+          courseId: id
+        }
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
 }
 
 export default CommentService;

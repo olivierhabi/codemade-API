@@ -1,5 +1,5 @@
 import "@babel/polyfill";
-import ChapterService from "../service/ChapterService";
+
 import CourseService from "../service/CourseService";
 import ModuleService from "../service/ModuleService";
 
@@ -46,7 +46,6 @@ class ChapterController {
         data: createdChapter
       });
     } catch (error) {
-      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });

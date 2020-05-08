@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import CourseService from "../service/CourseService";
+import AuthService from "../service/AuthService";
 
 class CourseController {
   /**
@@ -12,19 +13,25 @@ class CourseController {
     const { title, body } = req.body;
     const { id } = req.user;
     try {
+      const findUserById = await AuthService.findUserById(id);
+
+      if (findUserById == null) {
+        return res.status(400).send({
+          status: 400,
+          message: "Please login to create course"
+        });
+      }
       const createCourse = await CourseService.addCourse({
         title: title,
         body: body,
         createdUserId: id
       });
-
       return res.status(201).send({
         status: 201,
         message: "Course created Successfully",
         data: createCourse
       });
     } catch (error) {
-      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });
@@ -88,8 +95,6 @@ class CourseController {
 
     try {
       const getCourse = await CourseService.getCourse(id);
-
-      console.log(getCourse.length);
 
       if (getCourse.length == 0) {
         return res.status(400).send({

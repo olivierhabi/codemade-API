@@ -8,5 +8,6 @@ const { validate } = RateValidator;
 const router = Router();
 
 router.post("/", Auth, validate, RateController.Create);
+router.get("/:id/course", Auth, RateController.GetAllRate);
 
 export default router;

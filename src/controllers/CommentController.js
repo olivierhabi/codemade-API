@@ -12,7 +12,6 @@ class CommentController {
   static async Create(req, res) {
     const { comment, courseId } = req.body;
     const { id } = req.user;
-    console.log(comment, courseId, id);
 
     try {
       const courseFind = await CourseService.getCourse(courseId);
@@ -64,6 +63,37 @@ class CommentController {
         status: 200,
         message: "Get comment Successfully",
         data: getOneComment
+      });
+    } catch (error) {
+      return res
+        .status(500)
+        .send({ status: 500, message: "INTERNAL_SERVER ERROR" });
+    }
+  }
+
+  /**
+   *
+   * @param {object} req
+   * @param {object} res
+   * @return {object} comment
+   */
+  static async GetAllComment(req, res) {
+    const { id } = req.params;
+
+    try {
+      const getAllcomment = await CommentService.getAllComment(id);
+
+      if (getAllcomment.length == 0) {
+        return res.status(400).send({
+          status: 400,
+          message: "We can't find comments of this course"
+        });
+      }
+
+      return res.status(200).send({
+        status: 200,
+        message: "Get all comment is successfully",
+        data: getAllcomment
       });
     } catch (error) {
       return res

@@ -13,7 +13,18 @@ class UserService {
   static async findUser(username, next) {
     try {
       return await database.User.findOne({
-        where: { username: username },
+        where: { username: username }
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async findUserById(id, next) {
+    try {
+      return await database.User.findOne({
+        where: { id: id }
       });
     } catch (error) {
       throw error;
