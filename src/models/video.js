@@ -5,37 +5,37 @@ module.exports = (sequelize, DataTypes) => {
     {
       title: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
+        allowNull: false
       },
       videoUrl: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
+        allowNull: false
       },
       isWatched: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
-      },
+        allowNull: false
+      }
     },
     {}
   );
 
-  Video.associate = (models) => {
+  Video.associate = models => {
     // associations can be defined here
     Video.belongsTo(models.User, {
       foreignKey: "createdUserId",
-      as: "owner",
+      as: "owner"
     });
-    Video.belongsTo(models.User, {
+    Video.belongsTo(models.Courses, {
       foreignKey: "courseId",
-      as: "ownerCourse",
+      as: "ownerCourse"
     });
-    Video.belongsTo(models.User, {
+    Video.belongsTo(models.Module, {
       foreignKey: "moduleId",
-      as: "ownerModule",
+      as: "ownerModule"
     });
-    Video.belongsTo(models.User, {
+    Video.belongsTo(models.Chapter, {
       foreignKey: "chapterId",
-      as: "ownerChapter",
+      as: "ownerChapter"
     });
   };
 

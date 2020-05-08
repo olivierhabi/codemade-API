@@ -4,10 +4,20 @@ import "@babel/polyfill";
 const validateChapter = {
   async validate(req, res, next) {
     const schema = Joi.object().keys({
-      title: Joi.string().trim().min(6).max(255).required(),
-      body: Joi.string().trim().min(6).max(255).required(),
-      courseId: Joi.number().integer().max(255).required(),
-      moduleId: Joi.number().integer().max(255).required(),
+      title: Joi.string()
+        .trim()
+        .min(6)
+        .required(),
+      body: Joi.string()
+        .trim()
+        .min(6)
+        .required(),
+      courseId: Joi.number()
+        .integer()
+        .required(),
+      moduleId: Joi.number()
+        .integer()
+        .required()
     });
     const { value, error } = Joi.validate(req.body, schema);
     if (error && error.details) {
@@ -16,7 +26,7 @@ const validateChapter = {
         .send({ status: 400, message: error.details[0].message });
     }
     next();
-  },
+  }
 };
 
 export default validateChapter;

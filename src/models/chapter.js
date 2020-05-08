@@ -5,29 +5,29 @@ module.exports = (sequelize, DataTypes) => {
     {
       title: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
+        allowNull: false
       },
       body: {
         type: DataTypes.STRING(1024),
-        allowNull: false,
-      },
+        allowNull: false
+      }
     },
     {}
   );
 
-  Chapter.associate = (models) => {
+  Chapter.associate = models => {
     // associations can be defined here
     Chapter.belongsTo(models.User, {
       foreignKey: "createdUserId",
-      as: "owner",
+      as: "owner"
     });
-    Chapter.belongsTo(models.User, {
+    Chapter.belongsTo(models.Courses, {
       foreignKey: "courseId",
-      as: "ownerCourse",
+      as: "ownerCourse"
     });
-    Chapter.belongsTo(models.User, {
+    Chapter.belongsTo(models.Module, {
       foreignKey: "moduleId",
-      as: "ownerModule",
+      as: "ownerModule"
     });
   };
 

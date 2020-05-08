@@ -9,7 +9,7 @@ class VideoService {
       courseId,
       moduleId,
       chapterId,
-      createdUserId,
+      createdUserId
     } = newVideo;
     try {
       return await database.Video.create({
@@ -19,7 +19,20 @@ class VideoService {
         courseId,
         moduleId,
         chapterId,
-        createdUserId,
+        createdUserId
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async getOneVideo(id, next) {
+    try {
+      return await database.Video.findOne({
+        where: {
+          id
+        }
       });
     } catch (error) {
       throw error;

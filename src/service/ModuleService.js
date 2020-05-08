@@ -8,8 +8,30 @@ class ModuleService {
         title,
         body,
         courseId,
-        createdUserId,
+        createdUserId
       });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async getModule(id, next) {
+    try {
+      return await database.Module.findAll({
+        where: {
+          courseId: id
+        }
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async getOneModule(id, next) {
+    try {
+      return await database.Module.findOne({ where: { id: id } });
     } catch (error) {
       throw error;
     }

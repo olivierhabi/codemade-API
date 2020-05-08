@@ -7,7 +7,42 @@ class CourseService {
       return await database.Courses.create({
         title,
         body,
-        createdUserId,
+        createdUserId
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async getCourses(id, next) {
+    try {
+      return await database.Courses.findAll();
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async getMyCourses(id, next) {
+    try {
+      return await database.Courses.findAll({
+        where: {
+          createdUserId: id
+        }
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async getCourse(id, next) {
+    try {
+      return await database.Courses.findAll({
+        where: {
+          id: id
+        }
       });
     } catch (error) {
       throw error;

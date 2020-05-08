@@ -8,5 +8,7 @@ const { validate } = createChapterValidator;
 const router = Router();
 
 router.post("/", Auth, validate, ChapterController.Create);
+router.get("/:moduleId/:courseId", Auth, ChapterController.GetChapters);
+router.get("/:id", Auth, ChapterController.GetOneChapter);
 
 export default router;

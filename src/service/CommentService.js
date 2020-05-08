@@ -7,7 +7,18 @@ class CommentService {
       return await database.Comments.create({
         comment,
         courseId,
-        createdUserId,
+        createdUserId
+      });
+    } catch (error) {
+      throw error;
+    }
+    next();
+  }
+
+  static async getComment(id, next) {
+    try {
+      return await database.Comments.findOne({
+        where: { id }
       });
     } catch (error) {
       throw error;

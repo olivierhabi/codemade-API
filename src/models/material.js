@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "createdUserId",
       as: "owner"
     });
-    Material.belongsTo(models.User, {
+    Material.belongsTo(models.Courses, {
       foreignKey: "courseId",
       as: "ownerCourse"
     });
