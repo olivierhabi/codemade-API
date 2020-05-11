@@ -1,13 +1,11 @@
 import React from "react";
-import BackTop from "./BackTop";
-import NavBar from "./NavBar";
+import Header from "./Header";
 
 const HomePage = () => {
   return (
-    <body>
-      {/* <BackTop /> */}
-      <NavBar />
-    </body>
+    <>
+      <Header />
+    </>
   );
 };
 

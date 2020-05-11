@@ -4,7 +4,6 @@ import IconUp from "../img/icon-chevron-up.svg";
 const BackTop = () => {
   return (
     <div id="Top" class="back-to-top-container">
-      <h1>Back to top</h1>
       <div class="back-to-top-button-container">
         <a
           href="../index.htm#Top"

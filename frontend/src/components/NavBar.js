@@ -26,45 +26,43 @@ const NavBar = () => {
                 class="nav-menu nav-menu-left-aligned w-nav-menu"
               >
                 <a href="#" class="nav-link w-nav-link">
-                  Tour
+                  Pricing
                 </a>
-                <div data-delay="200" data-hover="" class="dropdown w-dropdown">
-                  <div class="nav-link w-dropdown-toggle">
-                    <div>Pages</div>
-                    <img src={IconDropdownArrow} alt="" class="dropdown-icon" />
-                  </div>
-                </div>
-                <div data-delay="200" data-hover="" class="dropdown w-dropdown">
-                  <div class="nav-link w-dropdown-toggle">
-                    <div>Sections</div>
-                    <img src={IconDropdownArrow} alt="" class="dropdown-icon" />
-                  </div>
-                </div>
-                <div data-delay="200" data-hover="" class="dropdown w-dropdown">
-                  <div class="nav-link w-dropdown-toggle">
-                    <div>Template</div>
-                    <img src={IconDropdownArrow} alt="" class="dropdown-icon" />
-                  </div>
-                </div>
+                <a href="#" class="nav-link w-nav-link">
+                  Courses
+                </a>
+                <a href="#" class="nav-link w-nav-link">
+                  Career
+                </a>
+
+                <a href="#" class="nav-link w-nav-link">
+                  Blog
+                </a>
+                <a href="#" class="nav-link w-nav-link">
+                  Contact
+                </a>
               </nav>
             </div>
             <div class="navbar-right-contents">
               <div class="navbar-functions">
-                <a
-                  href="javascript:if(confirm('https://webflow.com/templates/html/spark-ui-kit-website-template\n\nThis file was not retrieved because it was filtered out by your project settings.\n\nWould you like to open it from the server?'))window.location='https://webflow.com/templates/html/spark-ui-kit-website-template'"
-                  target="_blank"
-                  class="button w-inline-block"
-                >
-                  <div>Purchase Spark</div>
+                <a target="_blank" class="button w-inline-block">
+                  <div>Register</div>
                 </a>
-                <a href="../index.htm#" class="search-link w-inline-block">
-                  <img src={IconSearch} alt="" class="search-link-icon" />
-                  <div>Search</div>
+                <a target="_blank" class="button w-inline-block">
+                  <div>Login</div>
                 </a>
               </div>
               <div class="menu-button w-nav-button">
-                <img src={IconMenu} alt="" class="menu-button-image" />
-                <img src={IconX} alt="" class="menu-button-close-image" />
+                <img
+                  src="/codemade/img/icon-menu.svg"
+                  alt=""
+                  class="menu-button-image"
+                />
+                <img
+                  src="/codemade/img/icon-x.svg"
+                  alt=""
+                  class="menu-button-close-image"
+                />
               </div>
             </div>
           </div>
