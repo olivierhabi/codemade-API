@@ -84,6 +84,25 @@ const SignupPage = () => {
                             required=""
                           />
                         </div>
+                        <label class="w-checkbox selectable-field">
+                          <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
+                          <input
+                            type="checkbox"
+                            id="Terms-Agree"
+                            name="Unchecked"
+                            data-name="Unchecked"
+                            id="check-box"
+                          />
+                          <span
+                            for="Unchecked"
+                            class="selectable-label w-form-label"
+                          >
+                            I agree to the
+                            <a href="/terms" class="text-gray-1">
+                              Terms &amp; Conditions
+                            </a>
+                          </span>
+                        </label>
                         <input
                           type="submit"
                           value="Sign Up"

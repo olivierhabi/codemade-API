@@ -4,6 +4,7 @@ import Envelope from "../img/envelope.svg";
 import Padlock from "../img/padlock.svg";
 import bloglarge04 from "../img/blog-large-04.jpg";
 import SparkWhite from "../img/spark-white.svg";
+import IconChevronRight from "../img/icon-chevron-right.svg";
 
 const Footer = () => {
   return (
@@ -111,14 +112,10 @@ const Footer = () => {
                 class="list-grid-link w-inline-block"
               >
                 <div class="icon-horizontal">
-                  <img
-                    src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e853665c71842c35bdc5d59_application-design-grid-layout.svg"
-                    alt=""
-                  />
                   <div class="icon-horizontal-heading">View Style Guide</div>
                 </div>
                 <img
-                  src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e85350952b0760dcd10a5ba_icon-chevron-right.svg"
+                  src={IconChevronRight}
                   alt=""
                   class="list-grid-link-arrow"
                 />
@@ -128,14 +125,10 @@ const Footer = () => {
                 class="list-grid-link w-inline-block"
               >
                 <div class="icon-horizontal">
-                  <img
-                    src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e853665f0055b6c8ca9affc_code-coding-script.svg"
-                    alt=""
-                  />
                   <div class="icon-horizontal-heading">Getting Started</div>
                 </div>
                 <img
-                  src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e85350952b0760dcd10a5ba_icon-chevron-right.svg"
+                  src={IconChevronRight}
                   alt=""
                   class="list-grid-link-arrow"
                 />
@@ -146,16 +139,12 @@ const Footer = () => {
                 class="list-grid-link no-border w-inline-block"
               >
                 <div class="icon-horizontal">
-                  <img
-                    src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e853667c71842813bdc5d5e_screen-pc-smart-phone-iphone.svg"
-                    alt=""
-                  />
                   <div class="icon-horizontal-heading">
                     Get Customer Support
                   </div>
                 </div>
                 <img
-                  src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e85350952b0760dcd10a5ba_icon-chevron-right.svg"
+                  src={IconChevronRight}
                   alt=""
                   class="list-grid-link-arrow"
                 />

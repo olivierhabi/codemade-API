@@ -12,3 +12,18 @@ body {
 select {
   -webkit-appearance: none;
 }
+
+#check-box {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.style-guide-description {
+  top: 100px;
+}
+
+.boxed {
+  padding: 6px;
+  align-items: center;
+}

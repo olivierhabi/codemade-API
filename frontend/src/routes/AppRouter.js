@@ -8,6 +8,13 @@ import Signin from "../components/Signin";
 import ForgotPassword from "../components/ForgotPassword";
 import Blog from "../components/Blog";
 import Footer from "../components/Footer";
+import CreateCourse from "../components/CreateCourse";
+import CreateModule from "../components/CreateModule";
+import CreateVideo from "../components/CreateVideo";
+import TermsAndCondition from "../components/TermsAndCondition";
+import ViewCourses from "../components/ViewCourses";
+import SingleCourse from "../components/SingleCourse";
+import VideoPage from "../components/VideoPage";
 
 const AppRouter = () => {
   return (
@@ -21,6 +28,13 @@ const AppRouter = () => {
           <Route path="/signin" component={Signin} exact={true} />
           <Route path="/forgot" component={ForgotPassword} exact={true} />
           <Route path="/blog" component={Blog} exact={true} />
+          <Route path="/course" component={CreateCourse} exact={true} />
+          <Route path="/module" component={CreateModule} exact={true} />
+          <Route path="/video" component={CreateVideo} exact={true} />
+          <Route path="/terms" component={TermsAndCondition} exact={true} />
+          <Route path="/courses" component={ViewCourses} exact={true} />
+          <Route path="/course1" component={SingleCourse} exact={true} />
+          <Route path="/video1" component={VideoPage} exact={true} />
           {/* <Route path="/signup" component={SignupFormPage} exact={true} />
           <Route path="/signin" component={LoginForm} /> */}
         </Switch>

@@ -1417,18 +1417,18 @@ textarea.w-select {
   display: none;
   bottom: 0;
   left: 0;
-//   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yMCAwIDI0IDQwIiB3aWR0aD0iMjQiIGhlaWdodD0iNDAiPjxnIHRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0ibTAgMGg1djIzaDIzdjVoLTI4eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDN2MjNoMjN2M2gtMjZ6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg==");
+  //   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yMCAwIDI0IDQwIiB3aWR0aD0iMjQiIGhlaWdodD0iNDAiPjxnIHRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0ibTAgMGg1djIzaDIzdjVoLTI4eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDN2MjNoMjN2M2gtMjZ6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg==");
 }
 .w-lightbox-right {
   display: none;
   right: 0;
   bottom: 0;
-//   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMjQgNDAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMC0waDI4djI4aC01di0yM2gtMjN6IiBvcGFjaXR5PSIuNCIvPjxwYXRoIGQ9Im0xIDFoMjZ2MjZoLTN2LTIzaC0yM3oiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+");
+  //   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMjQgNDAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMC0waDI4djI4aC01di0yM2gtMjN6IiBvcGFjaXR5PSIuNCIvPjxwYXRoIGQ9Im0xIDFoMjZ2MjZoLTN2LTIzaC0yM3oiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+");
 }
 .w-lightbox-close {
   right: 0;
   height: 2.6em;
-//   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMTggMTciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNyI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMCAwaDd2LTdoNXY3aDd2NWgtN3Y3aC01di03aC03eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDd2LTdoM3Y3aDd2M2gtN3Y3aC0zdi03aC03eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=");
+  //   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMTggMTciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNyI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMCAwaDd2LTdoNXY3aDd2NWgtN3Y3aC01di03aC03eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDd2LTdoM3Y3aDd2M2gtN3Y3aC0zdi03aC03eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=");
   background-size: 18px;
 }
 .w-lightbox-strip {
@@ -1977,7 +1977,7 @@ textarea.w-select {
   border-bottom-color: #3898ec;
   border-left-color: #3898ec;
   border-right-color: #3898ec;
-//   background-image: url(../../../d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg);
+  //   background-image: url(../../../d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg);
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2211,8 +2211,8 @@ figcaption {
   grid-auto-columns: 1fr;
   grid-column-gap: 48px;
   grid-row-gap: 48px;
-  -ms-grid-columns: 1fr 2fr;
-  grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 1fr 3fr;
+  grid-template-columns: 1fr 3fr;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
 }
@@ -3187,7 +3187,7 @@ figcaption {
 .checkbox.w--redirected-checked {
   border-color: #e14817;
   background-color: #e14817;
-//   background-image: url("../5e8535c225aceded5e208a2d_icon-check-small.svg");
+  //   background-image: url("../5e8535c225aceded5e208a2d_icon-check-small.svg");
   background-position: 50% 50%;
   background-size: auto;
 }
@@ -3296,7 +3296,7 @@ figcaption {
   border-color: rgba(44, 45, 54, 0.17);
   border-radius: 5px;
   background-color: #fff;
-//   background-image: url("../5e85350afa63bc7b708085fe_icon-select-arrow.svg");
+  //   background-image: url("../5e85350afa63bc7b708085fe_icon-select-arrow.svg");
   background-position: 94% 50%;
   background-size: 16px 16px;
   background-repeat: no-repeat;
@@ -3324,7 +3324,7 @@ figcaption {
   border-style: none;
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.08);
-//   background-image: url("../5e85696b8347407734400c02_icon-switch-circle.svg");
+  //   background-image: url("../5e85696b8347407734400c02_icon-switch-circle.svg");
   background-position: 4px 4px;
   background-size: 12px 12px;
   background-repeat: no-repeat;
@@ -3336,7 +3336,7 @@ figcaption {
 
 .switch.w--redirected-checked {
   background-color: #e14817;
-//   background-image: url("../5e85696b8347407734400c02_icon-switch-circle.svg");
+  //   background-image: url("../5e85696b8347407734400c02_icon-switch-circle.svg");
   background-position: 24px 4px;
   background-size: 12px 12px;
 }
