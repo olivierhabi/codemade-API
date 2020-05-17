@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import AuthNavbar from "./AuthNavBar";
 import API from "./Api";
 import Envelope from "../img/envelope.svg";
 import Padlock from "../img/padlock.svg";
@@ -14,7 +13,7 @@ const Signin = () => {
   const SignIn = (e) => {
     e.preventDefault();
 
-    API.post("auth/signin", {
+    API.post("/auth/signin", {
       username: username,
       password: password,
     }).then(
@@ -51,7 +50,6 @@ const Signin = () => {
 
   return (
     <>
-      {/* <AuthNavbar /> */}
       <div class="account-page-content">
         <div class="main-container">
           <div class="container-small align-center text-center">

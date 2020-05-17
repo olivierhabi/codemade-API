@@ -4,6 +4,5 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default axios.create({
-  baseURL:
-    process.env.REACT_APP_API_URL || "https://codemade.herokuapp.com/api",
+  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000/api",
 });

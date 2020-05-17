@@ -1,6 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../components/Api";
 
 const CreateModule = () => {
+  const [data, setData] = useState([]);
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [courseId, setCourseid] = useState("");
+
+  const token = localStorage.getItem("auth-token");
+  const options = {
+    headers: { Authorization: token },
+  };
+  const fetchData = async () => {
+    let mounted = true;
+    await API.get("/course", options)
+      .then((res) => {
+        if (mounted) {
+          setData(res.data.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect((mounted) => {
+    fetchData();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const SubmitModule = (e) => {
+    e.preventDefault();
+
+    console.log(title, body, courseId);
+
+    // API.post("/module", {
+    //   title: title,
+    //   body: body,
+    //   courseId: courseId,
+    // }).then(
+    //   (response) => {
+    //     // const { token, message } = response.data;
+    //     // localStorage.setItem("auth-token", token);
+    //     // setMessage(message);
+    //     // history.push("/courses");
+    //   },
+    //   (error) => {
+    //     // if (!error.response) {
+    //     //   const networkError = "Error: network error";
+    //     //   setMessage(networkError);
+    //     // } else {
+    //     //   const { message } = error.response.data;
+    //     //   setMessage(message);
+    //     // }
+    //   }
+    // );
+  };
+
   return (
     <div class="account-page-content">
       <div class="main-container">
@@ -11,42 +67,27 @@ const CreateModule = () => {
           </div>
           <div class="form-block w-form">
             <form
+              onChange={SubmitModule}
               id="wf-form-Sign-Up-Form"
-              name="wf-form-Sign-Up-Form"
-              data-name="Sign Up Form"
               class="form-grid-vertical"
             >
               <div class="icon-form-input">
-                <img
-                  src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e853666fa63bc472e808cfa_envelope.svg"
-                  alt=""
-                  class="icon-form-input-image"
-                />
                 <input
-                  type="email"
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
                   class="form-input-unstyled w-input"
-                  maxlength="256"
-                  name="Sign-Up-Email"
-                  data-name="Sign Up Email"
                   placeholder="Title of Module"
-                  id="Sign-Up-Email"
                   required=""
                 />
               </div>
               <div class="icon-form-input">
-                <img
-                  src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e853667516e7a90b04ef6da_padlock.svg"
-                  alt=""
-                  class="icon-form-input-image"
-                />
-                <input
-                  type="password"
+                <textarea
+                  type="text"
+                  value={body}
+                  onChange={(e) => setBody(e.target.value)}
                   class="form-input-unstyled w-input"
-                  maxlength="256"
-                  name="Sign-Up-Password"
-                  data-name="Sign Up Password"
                   placeholder="Body of Module"
-                  id="Sign-Up-Password"
                   required=""
                 />
               </div>
@@ -60,16 +101,29 @@ const CreateModule = () => {
                 </label>
                 <div class="select-field">
                   <select
-                    id="Preferred-Method"
-                    name="Preferred-Method"
-                    data-name="Preferred Method"
+                    onChange={(e) => setBody(e.target.value)}
+                    value={courseId}
                     required=""
                     class="select-field-unstyled w-select"
                   >
                     <option value="">Select an option</option>
-                    <option value="First">First Course</option>
+                    {data.map((data, index) => {
+                      // eslint-disable-next-line no-redeclare
+                      var index = index + 1;
+
+                      return (
+                        <option
+                          onChange={(e) => setBody(data.id)}
+                          key={index}
+                          value={courseId}
+                        >
+                          {data.title}
+                        </option>
+                      );
+                    })}
+                    {/* <option value="First">First Course</option>
                     <option value="Second">Second Course</option>
-                    <option value="Third">Third Course</option>
+                    <option value="Third">Third Course</option> */}
                   </select>
                 </div>
               </div>

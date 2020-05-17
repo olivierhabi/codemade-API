@@ -1,9 +1,5 @@
 import React, { useEffect } from "react";
 import SparkDark from "../img/spark-dark.svg";
-import IconDropdownArrow from "../img/icon-dropdown-arrow.svg";
-import IconSearch from "../img/icon-search.svg";
-import IconX from "../img/icon-x.svg";
-import IconMenu from "../img/icon-menu.svg";
 import getToken from "./helpers/jwt";
 import { NavLink } from "react-router-dom";
 
@@ -29,9 +25,11 @@ const NavBar = () => {
     }
     return (
       <>
-        <a target="_blank" class="button w-inline-block">
-          <div>Logout</div>
-        </a>
+        <NavLink to="/logout" exact={true}>
+          <a target="_blank" class="button w-inline-block">
+            <div>Logout</div>
+          </a>
+        </NavLink>
       </>
     );
   };
