@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import AuthNavbar from "./AuthNavBar";
+import API from "./API";
 import Envelope from "../img/envelope.svg";
 import Padlock from "../img/padlock.svg";
 
 const Signin = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const SignIn = (e) => {
+    e.preventDefault();
+
+    API.post("/auth/signin", {
+      username,
+      password,
+    }).then(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+
   return (
     <>
-      <AuthNavbar />
+      {/* <AuthNavbar /> */}
       <div class="account-page-content">
         <div class="main-container">
           <div class="container-small align-center text-center">
@@ -17,33 +37,30 @@ const Signin = () => {
             <div class="form-block w-form">
               <form
                 id="wf-form-Sign-In-Form"
-                name="wf-form-Sign-In-Form"
-                data-name="Sign In Form"
                 class="form-grid-vertical"
+                onSubmit={SignIn}
               >
                 <div class="icon-form-input">
                   <img src={Envelope} alt="" class="icon-form-input-image" />
                   <input
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     type="email"
                     class="form-input-unstyled w-input"
                     maxlength="256"
-                    name="Sign-Up-Email"
-                    data-name="Sign Up Email"
                     placeholder="Email Address"
-                    id="Sign-Up-Email"
                     required=""
                   />
                 </div>
                 <div class="icon-form-input">
                   <img src={Padlock} alt="" class="icon-form-input-image" />
                   <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     class="form-input-unstyled w-input"
                     maxlength="256"
-                    name="Sign-Up-Password"
-                    data-name="Sign Up Password"
                     placeholder="Password"
-                    id="Sign-Up-Password"
                     required=""
                   />
                 </div>
