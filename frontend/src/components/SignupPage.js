@@ -12,7 +12,7 @@ import userChatTalk from "../img/user-chat-talk.svg";
 const SignupPage = () => {
   return (
     <>
-      <AuthNavbar />
+      {/* <AuthNavbar /> */}
       <div class="account-page-content">
         <div class="main-container">
           <div class="w-layout-grid grid-halves">

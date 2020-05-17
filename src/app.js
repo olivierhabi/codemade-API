@@ -1,8 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import cors from "cors";
-import models from "./models";
 import AuthRoutes from "./routes/AuthRoutes";
 import CourseRoutes from "./routes/CourseRoutes";
 import ModuleRoutes from "./routes/ModuleRoutes";
@@ -12,9 +10,21 @@ import VideoRoutes from "./routes/VideoRoutes";
 import MaterialRoutes from "./routes/MaterialRoutes";
 import RateRoutes from "./routes/RateRoutes";
 
+import models from "./models";
+
+import cors from "cors";
+
 dotenv.config();
 
 const app = express();
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
@@ -34,13 +44,13 @@ app.get("/", (req, res) => {
   console.log({ message: "Welcome CODEMADE-API" });
   return res.status(200).send({
     status: 200,
-    message: "Welcome CODEMADE-API"
+    message: "Welcome CODEMADE-API",
   });
 });
 
 models.sequelize
   .sync({
-    force: false
+    force: false,
   })
   .then(() =>
     app.listen(process.env.PORT, () =>
