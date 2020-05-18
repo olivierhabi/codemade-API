@@ -11,6 +11,22 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(1024),
         allowNull: false,
       },
+      courseType: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
+      imageUrl: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
+      features: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
+      price: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
     },
     {}
   );

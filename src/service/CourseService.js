@@ -2,12 +2,24 @@ import database from "../models";
 
 class CourseService {
   static async addCourse(newCourse, next) {
-    const { title, body, createdUserId } = newCourse;
+    const {
+      title,
+      body,
+      courseType,
+      imageUrl,
+      features,
+      price,
+      createdUserId,
+    } = newCourse;
     try {
       return await database.Courses.create({
         title,
         body,
-        createdUserId
+        courseType,
+        imageUrl,
+        features,
+        price,
+        createdUserId,
       });
     } catch (error) {
       throw error;
@@ -28,8 +40,8 @@ class CourseService {
     try {
       return await database.Courses.findAll({
         where: {
-          createdUserId: id
-        }
+          createdUserId: id,
+        },
       });
     } catch (error) {
       throw error;
@@ -41,8 +53,8 @@ class CourseService {
     try {
       return await database.Courses.findAll({
         where: {
-          id: id
-        }
+          id: id,
+        },
       });
     } catch (error) {
       throw error;

@@ -10,7 +10,8 @@ class CourseController {
    * @return {object} course
    */
   static async Create(req, res) {
-    const { title, body } = req.body;
+    const { title, body, courseType, imageUrl, features, price } = req.body;
+
     const { id } = req.user;
     try {
       const findUserById = await AuthService.findUserById(id);
@@ -18,20 +19,25 @@ class CourseController {
       if (findUserById == null) {
         return res.status(400).send({
           status: 400,
-          message: "Please login to create course"
+          message: "Please login to create course",
         });
       }
       const createCourse = await CourseService.addCourse({
         title: title,
         body: body,
-        createdUserId: id
+        courseType: courseType,
+        imageUrl: imageUrl,
+        price: price,
+        features: features,
+        createdUserId: id,
       });
       return res.status(201).send({
         status: 201,
         message: "Course created Successfully",
-        data: createCourse
+        data: createCourse,
       });
     } catch (error) {
+      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });
@@ -51,7 +57,7 @@ class CourseController {
       return res.status(200).send({
         status: 200,
         message: "Get course is successfully",
-        data: getCourses
+        data: getCourses,
       });
     } catch (error) {
       return res
@@ -75,7 +81,7 @@ class CourseController {
       return res.status(200).send({
         status: 200,
         message: "Get My course is successfully",
-        data: getMyCourses
+        data: getMyCourses,
       });
     } catch (error) {
       return res
@@ -99,14 +105,14 @@ class CourseController {
       if (getCourse.length == 0) {
         return res.status(400).send({
           status: 400,
-          message: "We can't find course with the given courseId"
+          message: "We can't find course with the given courseId",
         });
       }
 
       return res.status(200).send({
         status: 200,
         message: "Get course is successfully",
-        data: getCourse
+        data: getCourse,
       });
     } catch (error) {
       return res

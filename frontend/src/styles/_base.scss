@@ -27,3 +27,17 @@ select {
   padding: 6px;
   align-items: center;
 }
+.text-primary {
+  color: #e14817;
+  font-weight: 700;
+  font-size: initial;
+}
+.color-link-box-grid {
+  grid-row-gap: 80px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.color-link-box {
+  padding-right: 10px;
+  padding-left: 10px;
+}

@@ -5,21 +5,29 @@ module.exports = (sequelize, DataTypes) => {
     {
       rate: {
         type: DataTypes.STRING(15),
-        allowNull: false
-      }
+        allowNull: false,
+      },
+      commentRate: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
+      name: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
     },
     {}
   );
 
-  Rating.associate = models => {
+  Rating.associate = (models) => {
     // associations can be defined here
     Rating.belongsTo(models.User, {
       foreignKey: "createdUserId",
-      as: "owner"
+      as: "owner",
     });
     Rating.belongsTo(models.Courses, {
       foreignKey: "courseId",
-      as: "ownerCourse"
+      as: "ownerCourse",
     });
   };
 

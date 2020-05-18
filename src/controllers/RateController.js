@@ -10,7 +10,7 @@ class RateController {
    * @return {object} rate
    */
   static async Create(req, res) {
-    const { rate, courseId } = req.body;
+    const { rate, commentRate, name, courseId } = req.body;
     const { id } = req.user;
 
     const courseFind = await CourseService.getCourse(courseId);
@@ -18,21 +18,24 @@ class RateController {
     if (courseFind.length == 0) {
       return res.status(400).send({
         status: 400,
-        message: "We can't find course with given courseId"
+        message: "We can't find course with given courseId",
       });
     }
 
     try {
       const createRate = await RateService.addRate({
         rate,
+        commentRate,
+        name,
         courseId,
-        createdUserId: id
+        createdUserId: id,
       });
 
       return res.send({
-        message: createRate
+        message: createRate,
       });
     } catch (error) {
+      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });
@@ -54,14 +57,14 @@ class RateController {
       if (getAllRate.length == 0) {
         return res.status(400).send({
           status: 400,
-          message: "We can't find any rate of this course"
+          message: "We can't find any rate of this course",
         });
       }
 
       return res.status(200).send({
         status: 200,
         message: "Get Rate of this course is successfully",
-        data: getAllRate
+        data: getAllRate,
       });
     } catch (error) {
       return res

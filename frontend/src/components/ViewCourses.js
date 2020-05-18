@@ -1,91 +1,72 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../components/Api";
 import Image from "../img/blog-large-04.jpg";
-import ArrowRight from "../img/icon-arrow-right.svg";
 
 const ViewCourses = () => {
+  const [data, setData] = useState([]);
+
+  const token = localStorage.getItem("auth-token");
+  const options = {
+    headers: { Authorization: token },
+  };
+  const fetchCourses = async () => {
+    let mounted = true;
+    await API.get("/course", options)
+      .then((res) => {
+        if (mounted) {
+          // console.log(res.data.data);
+          setData(res.data.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect((mounted) => {
+    fetchCourses();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const CourseCard = (course, index) => {
+    return (
+      <div key={index} class="container-small align-center">
+        <div class="color-link-box-card shadow">
+          <img src={Image} alt="" class="rounded-top" />
+          <div class="boxed-course square-top">
+            <h6 className="course-title text-primary">{course.course.title}</h6>
+            <div className="course-intro">{course.course.body}</div>
+          </div>
+          <div className="bottom-course">
+            <p className="bottom-course__course-type text-primary">
+              {course.course.courseType}
+            </p>
+            <p className="bottom-course__course-price">
+              ${course.course.price}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <div class="main-container">
-        <h1 class="display-heading-2">Available courses.</h1>
-        <div class="text-large">
+        <h1 class="course-header display-heading-2">Available courses.</h1>
+        <div className="text-large">
           All Available courses on Architect Academy.
         </div>
       </div>
       <div class="section bg-gray-4">
         <div class="main-container">
           <div class="w-layout-grid color-link-box-grid">
-            <div class="container-small align-center">
-              <div class="color-link-box bg-primary-1">
-                <div class="color-link-box-card shadow">
-                  <img src={Image} alt="" class="rounded-top" />
-                  <div class="boxed square-top">
-                    <h6 class="text-primary-1">Insurance for</h6>
-                    <h4 class="large-heading color-link-box-heading">
-                      Couples
-                    </h4>
-                    <div>
-                      Habitant scelerisque eu commodo amet, sollicitudin mi.
-                      Viverra netus nullam tempor fringilla molestie.
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="../../template/style-guide/index.htm"
-                  class="link-with-arrow w-inline-block"
-                >
-                  <div class="text-white">View Style Guide</div>
-                  <img src={ArrowRight} alt="" class="link-arrow" />
-                </a>
-              </div>
-            </div>
-            <div class="container-small align-center">
-              <div class="color-link-box bg-primary-2">
-                <div class="color-link-box-card shadow">
-                  <img src={Image} alt="" class="rounded-top" />
-                  <div class="boxed square-top">
-                    <h6 class="text-primary-2">Peace of Mind</h6>
-                    <h4 class="large-heading color-link-box-heading">
-                      Families
-                    </h4>
-                    <div>
-                      Habitant scelerisque eu commodo amet, sollicitudin mi.
-                      Viverra netus nullam tempor fringilla molestie.
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="../../blog/blog-1/index.htm"
-                  class="link-with-arrow w-inline-block"
-                >
-                  <div class="text-white">See Blog</div>
-                  <img src={ArrowRight} alt="" class="link-arrow" />
-                </a>
-              </div>
-            </div>
-            <div class="container-small align-center">
-              <div class="color-link-box bg-primary-3">
-                <div class="color-link-box-card shadow">
-                  <img src={Image} alt="" class="rounded-top" />
-                  <div class="boxed square-top">
-                    <h6 class="text-primary-3">Cover for</h6>
-                    <h4 class="large-heading color-link-box-heading">
-                      Business
-                    </h4>
-                    <div>
-                      Habitant scelerisque eu commodo amet, sollicitudin mi.
-                      Viverra netus nullam tempor fringilla molestie.
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="../../template/getting-started/index.htm"
-                  class="link-with-arrow w-inline-block"
-                >
-                  <div class="text-white">Getting Started</div>
-                  <img src={ArrowRight} alt="" class="link-arrow" />
-                </a>
-              </div>
-            </div>
+            {data.map((course, index) => {
+              // eslint-disable-next-line no-redeclare
+              var index = index + 1;
+              // console.log(course);
+              return <CourseCard course={course} key={index} />;
+            })}
           </div>
         </div>
       </div>
