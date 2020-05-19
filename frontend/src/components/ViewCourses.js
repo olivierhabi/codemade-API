@@ -32,7 +32,7 @@ const ViewCourses = () => {
     return (
       <div key={index} class="container-small align-center">
         <div class="color-link-box-card shadow">
-          <img src={Image} alt="" class="rounded-top" />
+          <img src={Image} alt="" class="image-course rounded-top" />
           <div class="boxed-course square-top">
             <h6 className="course-title text-primary">{course.course.title}</h6>
             <div className="course-intro">{course.course.body}</div>
@@ -52,21 +52,25 @@ const ViewCourses = () => {
 
   return (
     <>
-      <div class="main-container">
-        <h1 class="course-header display-heading-2">Available courses.</h1>
-        <div className="text-large">
-          All Available courses on Architect Academy.
-        </div>
-      </div>
-      <div class="section bg-gray-4">
-        <div class="main-container">
-          <div class="w-layout-grid color-link-box-grid">
-            {data.map((course, index) => {
-              // eslint-disable-next-line no-redeclare
-              var index = index + 1;
-              // console.log(course);
-              return <CourseCard course={course} key={index} />;
-            })}
+      <div className="view-courses">
+        <div className="view-courses__course-block">
+          <div class="main-container">
+            <h1 class="course-header display-heading-2">Available courses.</h1>
+            <div className="text-large">
+              All Available courses on Architect Academy.
+            </div>
+          </div>
+          <div class="section bg-gray-4">
+            <div class="main-container">
+              <div class="w-layout-grid color-link-box-grid">
+                {data.map((course, index) => {
+                  // eslint-disable-next-line no-redeclare
+                  var index = index + 1;
+                  // console.log(course);
+                  return <CourseCard course={course} key={index} />;
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>

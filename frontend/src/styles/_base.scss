@@ -34,10 +34,18 @@ select {
 }
 .color-link-box-grid {
   grid-row-gap: 80px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .color-link-box {
   padding-right: 10px;
   padding-left: 10px;
+}
+
+.rounded-top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bg-gray-4 {
+  background-color: white;
 }
