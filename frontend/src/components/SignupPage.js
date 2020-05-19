@@ -7,7 +7,7 @@ import Padlock from "../img/padlock.svg";
 import Uppercut from "../img/uppercut.svg";
 import Monograma from "../img/monograma.svg";
 import Petsky from "../img/petsky.svg";
-import API from "../components/Api";
+import API from "./Api";
 
 const SignupPage = () => {
   const [username, setUsername] = useState("");

@@ -20,6 +20,7 @@ const SingleCourses = () => {
     await API.get("/course/1", options)
       .then((res) => {
         if (mounted) {
+          console.log(res.data);
           setData(res.data.data[0]);
         }
       })

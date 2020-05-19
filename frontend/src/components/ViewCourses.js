@@ -11,10 +11,10 @@ const ViewCourses = () => {
   };
   const fetchCourses = async () => {
     let mounted = true;
-    await API.get("/course", options)
+    await API.get("http://localhost:5000/api/course", options)
       .then((res) => {
         if (mounted) {
-          // console.log(res.data.data);
+          console.log(res.data.data);
           setData(res.data.data);
         }
       })

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import API from "../components/Api";
+import API from "./Api";
+import axios from "axios";
 
 const CreateModule = () => {
   const [data, setData] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [courseId, setCourseid] = useState("");
+  const [message, setMessage] = useState("");
 
   const token = localStorage.getItem("auth-token");
   const options = {
@@ -32,31 +34,46 @@ const CreateModule = () => {
   const SubmitModule = (e) => {
     e.preventDefault();
 
-    console.log(title, body, courseId);
-
-    // API.post("/module", {
-    //   title: title,
-    //   body: body,
-    //   courseId: courseId,
-    // }).then(
-    //   (response) => {
-    //     // const { token, message } = response.data;
-    //     // localStorage.setItem("auth-token", token);
-    //     // setMessage(message);
-    //     // history.push("/courses");
-    //   },
-    //   (error) => {
-    //     // if (!error.response) {
-    //     //   const networkError = "Error: network error";
-    //     //   setMessage(networkError);
-    //     // } else {
-    //     //   const { message } = error.response.data;
-    //     //   setMessage(message);
-    //     // }
-    //   }
-    // );
+    API.post(
+      "/module",
+      {
+        title: title,
+        body: body,
+        courseId: courseId,
+      },
+      options
+    ).then(
+      (response) => {
+        const { message } = response.data;
+        setMessage(message);
+        setTitle("");
+        setBody("");
+        setCourseid("");
+      },
+      (error) => {
+        if (!error.response) {
+          const networkError = "Error: network error";
+          setMessage(networkError);
+        } else {
+          const { message } = error.response.data;
+          setMessage(message);
+        }
+      }
+    );
   };
 
+  const Error = () => {
+    if (!message) {
+      return null;
+    }
+    return (
+      <div>
+        <div class="text-small text-center">
+          <a href="#">{message}</a>
+        </div>
+      </div>
+    );
+  };
   return (
     <div class="account-page-content">
       <div class="main-container">
@@ -67,7 +84,7 @@ const CreateModule = () => {
           </div>
           <div class="form-block w-form">
             <form
-              onChange={SubmitModule}
+              onSubmit={SubmitModule}
               id="wf-form-Sign-Up-Form"
               class="form-grid-vertical"
             >
@@ -75,6 +92,7 @@ const CreateModule = () => {
                 <input
                   type="text"
                   value={title}
+                  name="title"
                   onChange={(e) => setTitle(e.target.value)}
                   class="form-input-unstyled w-input"
                   placeholder="Title of Module"
@@ -85,6 +103,7 @@ const CreateModule = () => {
                 <textarea
                   type="text"
                   value={body}
+                  name="body"
                   onChange={(e) => setBody(e.target.value)}
                   class="form-input-unstyled w-input"
                   placeholder="Body of Module"
@@ -101,38 +120,31 @@ const CreateModule = () => {
                 </label>
                 <div class="select-field">
                   <select
-                    onChange={(e) => setBody(e.target.value)}
-                    value={courseId}
+                    onChange={(e) => setCourseid(e.target.value)}
+                    id="Preferred-Method"
+                    name="Preferred-Method"
+                    data-name="Preferred Method"
                     required=""
                     class="select-field-unstyled w-select"
                   >
-                    <option value="">Select an option</option>
                     {data.map((data, index) => {
                       // eslint-disable-next-line no-redeclare
                       var index = index + 1;
 
                       return (
-                        <option
-                          onChange={(e) => setBody(data.id)}
-                          key={index}
-                          value={courseId}
-                        >
-                          {data.title}
-                        </option>
+                        <>
+                          <option value="">Select an option</option>
+                          <option key={index} value={data.id}>
+                            {data.title}
+                          </option>
+                        </>
                       );
                     })}
-                    {/* <option value="First">First Course</option>
-                    <option value="Second">Second Course</option>
-                    <option value="Third">Third Course</option> */}
                   </select>
                 </div>
               </div>
-              <input
-                type="submit"
-                value="Create Module"
-                data-wait="Please wait..."
-                class="button w-button"
-              />
+              <Error />
+              <input type="submit" class="button w-button" />
             </form>
             <div class="form-success w-form-done">
               <div>Thank you! Your submission has been received!</div>

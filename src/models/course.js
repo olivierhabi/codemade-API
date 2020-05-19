@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       features: {
-        type: DataTypes.STRING(1024),
+        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: false,
       },
       price: {

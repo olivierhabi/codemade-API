@@ -13,7 +13,7 @@ const Signin = () => {
   const SignIn = (e) => {
     e.preventDefault();
 
-    API.post("/auth/signin", {
+    API.post("http://localhost:5000/api/auth/signin", {
       username: username,
       password: password,
     }).then(

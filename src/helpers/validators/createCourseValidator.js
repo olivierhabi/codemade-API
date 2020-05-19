@@ -8,7 +8,7 @@ const validateUser = {
       body: Joi.string().trim().min(6).max(1024).required(),
       courseType: Joi.string().trim().min(6).max(1024).required(),
       imageUrl: Joi.string().trim().min(6).required(),
-      features: Joi.string().required(),
+      features: Joi.array().required(),
       price: Joi.number().integer().required(),
     });
     const { value, error } = Joi.validate(req.body, schema);

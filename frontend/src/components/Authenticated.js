@@ -15,7 +15,7 @@ const Authenticated = (props) => {
     let mounted = true;
 
     // const loadData = async () => {
-    //   API.get("/courses", {
+    //   API.get("/account", {
     //     headers: { Authorization: token },
     //   })
     //     .then((res) => {
