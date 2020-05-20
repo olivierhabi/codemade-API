@@ -5,6 +5,7 @@ import Image from "../img/blog-large-04.jpg";
 import ArrowRight from "../img/icon-arrow-right.svg";
 import IconStar from "../img/icon-star.svg";
 import IconChevronRight from "../img/icon-chevron-right.svg";
+import IconVideoPlay from "../img/icon-video-play.svg";
 
 const SingleCourses = () => {
   const [data, setData] = useState([]);
@@ -17,10 +18,10 @@ const SingleCourses = () => {
   };
   const fetchCourse = async () => {
     let mounted = true;
-    await API.get("/course/1", options)
+    await API.get("/course/7", options)
       .then((res) => {
         if (mounted) {
-          console.log(res.data);
+          // console.log(res.data);
           setData(res.data.data[0]);
         }
       })
@@ -29,7 +30,7 @@ const SingleCourses = () => {
 
   const fetchModule = async () => {
     let mounted1 = true;
-    await API.get("/module/1/course", options)
+    await API.get("/module/7/course", options)
       .then((res) => {
         if (mounted1) {
           // const data = res.data.data;
@@ -90,7 +91,7 @@ const SingleCourses = () => {
   const Iconstar = (rate) => {
     // for (var i = 0; i < rate; i++) {
     //   const phone = data[i];
-    console.log(typeof rate.rate);
+    // console.log(typeof rate.rate);
 
     return <img src={IconStar} alt="" />;
   };
@@ -111,121 +112,120 @@ const SingleCourses = () => {
     );
   };
 
+  const Features = () => {
+    console.log(data.features);
+    return (
+      <div className="list-grid-item">
+        <div className="check-circle">
+          <img src={iconCheckSmall} alt="" />
+        </div>
+        <div>{data.features}</div>
+      </div>
+    );
+  };
+
   return (
     <>
-      <div className="section bg-gray-4">
-        <div className="main-container">
-          <div className="w-layout-grid grid-halves">
-            <div className="container align-center">
-              <h5 className="text-primary-3">{data.courseType}</h5>
-              <h3 className="display-heading-2">{data.title}</h3>
-              <div className="text-large">{data.body}</div>
-            </div>
-            <div className="container-small align-center">
-              <div className="color-link-box bg-primary-3">
-                <div className="color-link-box-card shadow">
-                  <img src={Image} alt="" className="rounded-top" />
-                  <div className="boxed-course square-top">
-                    <h6 className="course-title text-primary">
-                      {data.courseType}
-                    </h6>
-                    <div className="course-intro">{data.body}</div>
-                  </div>
-                  <div className="bottom-course">
-                    <p className="bottom-course__course-type text-primary">
-                      {data.courseType}
-                    </p>
-                    <p className="bottom-course__course-price">${data.price}</p>
-                  </div>
+      <div className="view-single-course">
+        <div className="view-single-course__course-block">
+          <div className="section bg-gray-4">
+            <div className="main-container">
+              <div className="w-layout-grid grid-halves">
+                <div className="container align-center">
+                  <h5 className="text-primary-3">{data.courseType}</h5>
+                  <h3 className="display-heading-2">{data.title}</h3>
+                  <div className="text-large">{data.body}</div>
                 </div>
-                <a
-                  href="../../template/style-guide/index.htm"
-                  className="link-with-arrow w-inline-block"
-                >
-                  <div className="text-white">Buy Now</div>
-                  <img src={ArrowRight} alt="" className="link-arrow" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="section bg-gray-4">
-        <div className="main-container">
-          <h6>Course Modules:</h6>
-          <div className="w-layout-grid grid-halves">
-            <div className="container-small">
-              <div className="boxed no-padding">
-                <div className="list-grid-vertical no-gaps">
-                  {module.map((module) => {
-                    // eslint-disable-next-line no-redeclare
-                    var index = index + 1;
-                    return <Module module={module} index={index} />;
-                  })}
-                </div>
-              </div>
-            </div>
-            <div className="container-large">
-              <h6>This course will cover:</h6>
-              <div className="w-layout-grid checklist-grid-halves">
-                <div className="list-grid-vertical">
-                  <div className="list-grid-item">
-                    <div className="check-circle">
-                      <img src={iconCheckSmall} alt="" />
+                <div className="container-small align-center">
+                  <div className="color-link-box bg-primary-3">
+                    <div className="color-link-box-card shadow">
+                      {/* <img src={Image} alt="" className="rounded-top" /> */}
+                      <div class="video-wrapper">
+                        <img src={Image} alt="" className="rounded-top" />
+                        <a
+                          href="../index.htm#"
+                          class="video-play-icon align-center bg-white w-inline-block w-lightbox"
+                        >
+                          <img src={IconVideoPlay} alt="" />
+                          <script type="application/json" class="w-json">
+                            {/* {
+                    "items": [
+                      {
+                        "type": "video",
+                        "originalUrl": "https://vimeo.com/398084063",
+                        "url": "https://vimeo.com/398084063",
+                        "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F398084063%3Fapp_id%3D122963&dntp=1&display_name=Vimeo&url=https%3A%2F%2Fvimeo.com%2F398084063&image=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F865582280_1280.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=vimeo\" width=\"940\" height=\"529\" scrolling=\"no\" title=\"Vimeo embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+                        "thumbnailUrl": "../../../i.vimeocdn.com/video/865582280_1280.jpg",
+                        "width": 940,
+                        "height": 529
+                      }
+                    ]
+                  } */}
+                          </script>
+                        </a>
+                      </div>
+
+                      <div className="boxed-course square-top">
+                        <h6 className="course-title text-primary">
+                          {data.courseType}
+                        </h6>
+                        <div className="course-intro">{data.body}</div>
+                      </div>
+                      <div className="bottom-course">
+                        <p className="bottom-course__course-type text-primary">
+                          {data.courseType}
+                        </p>
+                        <p className="bottom-course__course-price">
+                          ${data.price}
+                        </p>
+                      </div>
                     </div>
-                    <div>{data.features}</div>
-                  </div>
-                  <div className="list-grid-item">
-                    <div className="check-circle">
-                      <img src={iconCheckSmall} alt="" />
-                    </div>
-                    <div>{data.features}</div>
-                  </div>
-                  <div className="list-grid-item">
-                    <div className="check-circle">
-                      <img src={iconCheckSmall} alt="" />
-                    </div>
-                    <div>{data.features}</div>
-                  </div>
-                </div>
-                <div className="list-grid-vertical">
-                  <div className="list-grid-item">
-                    <div className="check-circle">
-                      <img src={iconCheckSmall} alt="" />
-                    </div>
-                    <div>{data.features}</div>
-                  </div>
-                  <div className="list-grid-item">
-                    <div className="check-circle">
-                      <img src={iconCheckSmall} alt="" />
-                    </div>
-                    <div>{data.features}</div>
-                  </div>
-                  <div className="list-grid-item">
-                    <div className="check-circle">
-                      <img src={iconCheckSmall} alt="" />
-                    </div>
-                    <div>{data.features}</div>
+                    <a
+                      href="../../template/style-guide/index.htm"
+                      className="link-with-arrow w-inline-block"
+                    >
+                      <div className="text-white">Buy Now</div>
+                      <img src={ArrowRight} alt="" className="link-arrow" />
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="section bg-gray-3">
-        <div className="main-container">
-          <div className="container section-title">
-            <h3 className="large-heading">Customer love</h3>
-            <div className="text-large">
-              We have an average customer rating of 4.97/5
+          <div className="section bg-gray-4">
+            <div className="main-container">
+              <div className="w-layout-grid grid-halves">
+                <div className="container-small">
+                  <h6>Course Modules:</h6>
+                  <div className="boxed no-padding">
+                    <div className="list-grid-vertical no-gaps">
+                      {module.map((module) => {
+                        // eslint-disable-next-line no-redeclare
+                        var index = index + 1;
+                        return <Module module={module} index={index} />;
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <div className="container-large">
+                  <h6>This course will cover:</h6>
+                  <div className="w-layout-grid checklist-grid-halves">
+                    <div className="list-grid-vertical">
+                      <Features />
+                      <Features />
+                      <Features />
+                      <Features />
+                    </div>
+                    <div className="list-grid-vertical">
+                      <Features />
+                      <Features />
+                      <Features />
+                      <Features />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="w-layout-grid review-grid-thirds">
-            {rate.map((rate) => {
-              // console.log(rate);
-              return <Rate rate={rate} />;
-            })}
           </div>
         </div>
       </div>

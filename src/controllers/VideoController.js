@@ -12,59 +12,30 @@ class VideoController {
    * @return {object} video
    */
   static async Create(req, res) {
-    const {
-      title,
-      videoUrl,
-      isWatched,
-      courseId,
-      moduleId,
-      chapterId
-    } = req.body;
+    const { videoUrl, moduleId } = req.body;
 
     const { id } = req.user;
 
     try {
-      const courseFind = await CourseService.getCourse(courseId);
-
-      if (courseFind.length == 0) {
-        return res.status(400).send({
-          status: 400,
-          message: "We can't find course with given courseId"
-        });
-      }
-
       const getOneModule = await ModuleService.getOneModule(moduleId);
 
       if (getOneModule == null) {
         return res.status(400).send({
           status: 400,
-          message: "We can't find module with the given moduleId"
-        });
-      }
-
-      const getChapter = await ChapterService.getOneChapter(chapterId);
-
-      if (getChapter == null) {
-        return res.status(400).send({
-          status: 400,
-          message: `We can't find chapter with the given chapterId`
+          message: "We can't find module with the given moduleId",
         });
       }
 
       const createVideo = await VideoService.addVideo({
-        title: title,
         videoUrl: videoUrl,
-        isWatched: isWatched,
-        courseId: courseId,
         moduleId: moduleId,
-        chapterId: chapterId,
-        createdUserId: id
+        createdUserId: id,
       });
 
       return res.status(201).send({
         status: 201,
         message: "Video created Successfully",
-        data: createVideo
+        data: createVideo,
       });
     } catch (error) {
       return res
@@ -88,14 +59,14 @@ class VideoController {
       if (getOneVideo == null) {
         return res.status(400).send({
           status: 400,
-          message: `We can't find video with the given videoId`
+          message: `We can't find video with the given videoId`,
         });
       }
 
       return res.status(200).send({
         status: 200,
         message: "Get Video is Successfully",
-        data: getOneVideo
+        data: getOneVideo,
       });
     } catch (error) {
       return res

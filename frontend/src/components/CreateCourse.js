@@ -80,7 +80,7 @@ const HomePage = () => {
                     type="text"
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
-                    class="form-input-unstyled w-input"
+                    class="body-input form-input-unstyled w-input"
                     placeholder="Body of Course"
                     required=""
                   />

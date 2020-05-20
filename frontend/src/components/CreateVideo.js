@@ -1,61 +1,164 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "./Api";
 
 const CreateVideo = () => {
+  const [data, setData] = useState([]);
+  const [modules, setModules] = useState([]);
+  const [module, setModule] = useState("");
+  const [videoUrl, setVideourl] = useState("");
+
+  const token = localStorage.getItem("auth-token");
+  const options = {
+    headers: { Authorization: token },
+  };
+  const fetchCourse = async () => {
+    let mounted = true;
+    await API.get("/course", options)
+      .then((res) => {
+        if (mounted) {
+          // console.log(res.data.data);
+          setData(res.data.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect((mounted) => {
+    fetchCourse();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const fetchModule = async (course) => {
+    // let mounted1 = true;
+    await API.get(`/module/${course}/course`, options)
+      .then((res) => {
+        // if (mounted1) {
+        console.log(res.data.data);
+        setModules(res.data.data);
+        // }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  // useEffect((mounted1) => {
+  //   fetchModule();
+  //   return () => {
+  //     mounted1 = false;
+  //   };
+  // }, []);
+
   return (
-    <div class="account-page-content">
-      <div class="main-container">
-        <div class="container-small align-center text-center">
-          <div class="account-title">
+    <div className="account-page-content">
+      <div className="main-container">
+        <div className="container-small align-center text-center">
+          <div className="account-title">
             <h1>Create Video</h1>
-            <div class="text-large">
+            <div className="text-large">
               Complete the form below to create Video.
             </div>
           </div>
-          <div class="form-block w-form">
+          <div className="form-block w-form">
             <form
               id="wf-form-Sign-Up-Form"
               name="wf-form-Sign-Up-Form"
               data-name="Sign Up Form"
-              class="form-grid-vertical"
+              className="form-grid-vertical"
             >
               <div>
-                <label for="Phone-Number-2" class="text-small form-input-label">
+                <label
+                  for="Phone-Number-2"
+                  className="text-small form-input-label"
+                >
                   Select Course
-                  <a href="../index.htm#" class="text-danger">
+                  <a href="../index.htm#" className="text-danger">
                     *
                   </a>
-                  <span class="text-danger"></span>
+                  <span className="text-danger"></span>
                 </label>
-                <div class="select-field">
+                <div className="select-field">
                   <select
+                    key="1"
                     id="Preferred-Method"
-                    name="Preferred-Method"
-                    data-name="Preferred Method"
+                    onChange={(e) => {
+                      fetchModule(e.target.value);
+                    }}
                     required=""
-                    class="select-field-unstyled w-select"
+                    className="select-field-unstyled w-select"
                   >
                     <option value="">Select an option</option>
-                    <option value="First">First Course</option>
-                    <option value="Second">Second Course</option>
-                    <option value="Third">Third Course</option>
+                    {data.map((data, index) => {
+                      // eslint-disable-next-line no-redeclare
+                      var index = index + 1;
+
+                      return (
+                        <>
+                          <option key={index} value={data.id}>
+                            {data.title}
+                          </option>
+                        </>
+                      );
+                    })}
                   </select>
                 </div>
               </div>
               <div>
-                <label for="Phone-Number-2" class="text-small form-input-label">
+                <label
+                  for="Phone-Number-2"
+                  className="text-small form-input-label"
+                >
                   Select Module
-                  <a href="../index.htm#" class="text-danger">
+                  <a href="../index.htm#" className="text-danger">
                     *
                   </a>
-                  <span class="text-danger"></span>
+                  <span className="text-danger"></span>
                 </label>
-                <div class="select-field">
+                <div className="select-field">
                   <select
+                    key="2"
+                    id="Preferred-Method"
+                    onChange={(e) => {
+                      setModule(e.target.value);
+                    }}
+                    required=""
+                    className="select-field-unstyled w-select"
+                  >
+                    <option value="">Select an option</option>
+                    {modules.map((data, index) => {
+                      // eslint-disable-next-line no-redeclare
+                      var index = index + 1;
+
+                      return (
+                        <>
+                          <option key={index} value={data.id}>
+                            {data.title}
+                          </option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label
+                  for="Phone-Number-2"
+                  className="text-small form-input-label"
+                >
+                  Select Video
+                  <a href="../index.htm#" className="text-danger">
+                    *
+                  </a>
+                  <span className="text-danger"></span>
+                </label>
+                <div className="select-field">
+                  <select
+                    key="3"
                     id="Preferred-Method"
                     name="Preferred-Method"
                     data-name="Preferred Method"
                     required=""
-                    class="select-field-unstyled w-select"
+                    className="select-field-unstyled w-select"
                   >
                     <option value="">Select an option</option>
                     <option value="First">First Module</option>
@@ -64,35 +167,17 @@ const CreateVideo = () => {
                   </select>
                 </div>
               </div>
-              <div class="icon-form-input">
-                <img
-                  src="../../../assets.website-files.com/5e852ac37e716f0238af30a3/5e853666fa63bc472e808cfa_envelope.svg"
-                  alt=""
-                  class="icon-form-input-image"
-                />
-
-                <input
-                  type="text"
-                  class="form-input-unstyled w-input"
-                  maxlength="256"
-                  name="Sign-Up-Password"
-                  data-name="Sign Up Password"
-                  placeholder="Video Url"
-                  id="Sign-Up-Password"
-                  required=""
-                />
-              </div>
               <input
                 type="submit"
                 value="Create Video"
                 data-wait="Please wait..."
-                class="button w-button"
+                className="button w-button"
               />
             </form>
-            <div class="form-success w-form-done">
+            <div className="form-success w-form-done">
               <div>Thank you! Your submission has been received!</div>
             </div>
-            <div class="form-error w-form-fail">
+            <div className="form-error w-form-fail">
               <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
