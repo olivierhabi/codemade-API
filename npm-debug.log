@@ -1,0 +1,587 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '--no-optional' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData @babel/core
+20 silly mapToRegistry name @babel/core
+21 silly mapToRegistry scope (from package name) @babel
+22 verbose mapToRegistry no registry URL found in name for scope @babel
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fcore
+26 silly fetchNamedPackageData @babel/plugin-proposal-class-properties
+27 silly mapToRegistry name @babel/plugin-proposal-class-properties
+28 silly mapToRegistry scope (from package name) @babel
+29 verbose mapToRegistry no registry URL found in name for scope @babel
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-proposal-class-properties
+33 silly fetchNamedPackageData @babel/plugin-transform-runtime
+34 silly mapToRegistry name @babel/plugin-transform-runtime
+35 silly mapToRegistry scope (from package name) @babel
+36 verbose mapToRegistry no registry URL found in name for scope @babel
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fplugin-transform-runtime
+40 silly fetchNamedPackageData @babel/polyfill
+41 silly mapToRegistry name @babel/polyfill
+42 silly mapToRegistry scope (from package name) @babel
+43 verbose mapToRegistry no registry URL found in name for scope @babel
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fpolyfill
+47 silly fetchNamedPackageData @babel/preset-env
+48 silly mapToRegistry name @babel/preset-env
+49 silly mapToRegistry scope (from package name) @babel
+50 verbose mapToRegistry no registry URL found in name for scope @babel
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npmjs.org/
+53 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fpreset-env
+54 silly fetchNamedPackageData @babel/register
+55 silly mapToRegistry name @babel/register
+56 silly mapToRegistry scope (from package name) @babel
+57 verbose mapToRegistry no registry URL found in name for scope @babel
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fregister
+61 silly fetchNamedPackageData @babel/runtime
+62 silly mapToRegistry name @babel/runtime
+63 silly mapToRegistry scope (from package name) @babel
+64 verbose mapToRegistry no registry URL found in name for scope @babel
+65 silly mapToRegistry using default registry
+66 silly mapToRegistry registry https://registry.npmjs.org/
+67 silly mapToRegistry uri https://registry.npmjs.org/@babel%2fruntime
+68 silly fetchNamedPackageData axios
+69 silly mapToRegistry name axios
+70 silly mapToRegistry using default registry
+71 silly mapToRegistry registry https://registry.npmjs.org/
+72 silly mapToRegistry uri https://registry.npmjs.org/axios
+73 silly fetchNamedPackageData babel-cli
+74 silly mapToRegistry name babel-cli
+75 silly mapToRegistry using default registry
+76 silly mapToRegistry registry https://registry.npmjs.org/
+77 silly mapToRegistry uri https://registry.npmjs.org/babel-cli
+78 silly fetchNamedPackageData babel-plugin-transform-runtime
+79 silly mapToRegistry name babel-plugin-transform-runtime
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry uri https://registry.npmjs.org/babel-plugin-transform-runtime
+83 silly fetchNamedPackageData babel-preset-env
+84 silly mapToRegistry name babel-preset-env
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry uri https://registry.npmjs.org/babel-preset-env
+88 silly fetchNamedPackageData babel-watch
+89 silly mapToRegistry name babel-watch
+90 silly mapToRegistry using default registry
+91 silly mapToRegistry registry https://registry.npmjs.org/
+92 silly mapToRegistry uri https://registry.npmjs.org/babel-watch
+93 silly fetchNamedPackageData bcryptjs
+94 silly mapToRegistry name bcryptjs
+95 silly mapToRegistry using default registry
+96 silly mapToRegistry registry https://registry.npmjs.org/
+97 silly mapToRegistry uri https://registry.npmjs.org/bcryptjs
+98 silly fetchNamedPackageData bluebird
+99 silly mapToRegistry name bluebird
+100 silly mapToRegistry using default registry
+101 silly mapToRegistry registry https://registry.npmjs.org/
+102 silly mapToRegistry uri https://registry.npmjs.org/bluebird
+103 silly fetchNamedPackageData body-parser
+104 silly mapToRegistry name body-parser
+105 silly mapToRegistry using default registry
+106 silly mapToRegistry registry https://registry.npmjs.org/
+107 silly mapToRegistry uri https://registry.npmjs.org/body-parser
+108 silly fetchNamedPackageData bull
+109 silly mapToRegistry name bull
+110 silly mapToRegistry using default registry
+111 silly mapToRegistry registry https://registry.npmjs.org/
+112 silly mapToRegistry uri https://registry.npmjs.org/bull
+113 silly fetchNamedPackageData concurrently
+114 silly mapToRegistry name concurrently
+115 silly mapToRegistry using default registry
+116 silly mapToRegistry registry https://registry.npmjs.org/
+117 silly mapToRegistry uri https://registry.npmjs.org/concurrently
+118 silly fetchNamedPackageData cors
+119 silly mapToRegistry name cors
+120 silly mapToRegistry using default registry
+121 silly mapToRegistry registry https://registry.npmjs.org/
+122 silly mapToRegistry uri https://registry.npmjs.org/cors
+123 silly fetchNamedPackageData dotenv
+124 silly mapToRegistry name dotenv
+125 silly mapToRegistry using default registry
+126 silly mapToRegistry registry https://registry.npmjs.org/
+127 silly mapToRegistry uri https://registry.npmjs.org/dotenv
+128 silly fetchNamedPackageData express
+129 silly mapToRegistry name express
+130 silly mapToRegistry using default registry
+131 silly mapToRegistry registry https://registry.npmjs.org/
+132 silly mapToRegistry uri https://registry.npmjs.org/express
+133 silly fetchNamedPackageData fetch
+134 silly mapToRegistry name fetch
+135 silly mapToRegistry using default registry
+136 silly mapToRegistry registry https://registry.npmjs.org/
+137 silly mapToRegistry uri https://registry.npmjs.org/fetch
+138 silly fetchNamedPackageData form-data
+139 silly mapToRegistry name form-data
+140 silly mapToRegistry using default registry
+141 silly mapToRegistry registry https://registry.npmjs.org/
+142 silly mapToRegistry uri https://registry.npmjs.org/form-data
+143 silly fetchNamedPackageData idempotent-babel-polyfill
+144 silly mapToRegistry name idempotent-babel-polyfill
+145 silly mapToRegistry using default registry
+146 silly mapToRegistry registry https://registry.npmjs.org/
+147 silly mapToRegistry uri https://registry.npmjs.org/idempotent-babel-polyfill
+148 silly fetchNamedPackageData joi
+149 silly mapToRegistry name joi
+150 silly mapToRegistry using default registry
+151 silly mapToRegistry registry https://registry.npmjs.org/
+152 silly mapToRegistry uri https://registry.npmjs.org/joi
+153 silly fetchNamedPackageData jsonwebtoken
+154 silly mapToRegistry name jsonwebtoken
+155 silly mapToRegistry using default registry
+156 silly mapToRegistry registry https://registry.npmjs.org/
+157 silly mapToRegistry uri https://registry.npmjs.org/jsonwebtoken
+158 silly fetchNamedPackageData make-runnable
+159 silly mapToRegistry name make-runnable
+160 silly mapToRegistry using default registry
+161 silly mapToRegistry registry https://registry.npmjs.org/
+162 silly mapToRegistry uri https://registry.npmjs.org/make-runnable
+163 silly fetchNamedPackageData moment
+164 silly mapToRegistry name moment
+165 silly mapToRegistry using default registry
+166 silly mapToRegistry registry https://registry.npmjs.org/
+167 silly mapToRegistry uri https://registry.npmjs.org/moment
+168 silly fetchNamedPackageData passport
+169 silly mapToRegistry name passport
+170 silly mapToRegistry using default registry
+171 silly mapToRegistry registry https://registry.npmjs.org/
+172 silly mapToRegistry uri https://registry.npmjs.org/passport
+173 silly fetchNamedPackageData passport-jwt
+174 silly mapToRegistry name passport-jwt
+175 silly mapToRegistry using default registry
+176 silly mapToRegistry registry https://registry.npmjs.org/
+177 silly mapToRegistry uri https://registry.npmjs.org/passport-jwt
+178 silly fetchNamedPackageData path
+179 silly mapToRegistry name path
+180 silly mapToRegistry using default registry
+181 silly mapToRegistry registry https://registry.npmjs.org/
+182 silly mapToRegistry uri https://registry.npmjs.org/path
+183 silly fetchNamedPackageData pg
+184 silly mapToRegistry name pg
+185 silly mapToRegistry using default registry
+186 silly mapToRegistry registry https://registry.npmjs.org/
+187 silly mapToRegistry uri https://registry.npmjs.org/pg
+188 silly fetchNamedPackageData pg-hstore
+189 silly mapToRegistry name pg-hstore
+190 silly mapToRegistry using default registry
+191 silly mapToRegistry registry https://registry.npmjs.org/
+192 silly mapToRegistry uri https://registry.npmjs.org/pg-hstore
+193 silly fetchNamedPackageData python-bridge
+194 silly mapToRegistry name python-bridge
+195 silly mapToRegistry using default registry
+196 silly mapToRegistry registry https://registry.npmjs.org/
+197 silly mapToRegistry uri https://registry.npmjs.org/python-bridge
+198 silly fetchNamedPackageData python-shell
+199 silly mapToRegistry name python-shell
+200 silly mapToRegistry using default registry
+201 silly mapToRegistry registry https://registry.npmjs.org/
+202 silly mapToRegistry uri https://registry.npmjs.org/python-shell
+203 silly fetchNamedPackageData redis
+204 silly mapToRegistry name redis
+205 silly mapToRegistry using default registry
+206 silly mapToRegistry registry https://registry.npmjs.org/
+207 silly mapToRegistry uri https://registry.npmjs.org/redis
+208 silly fetchNamedPackageData request
+209 silly mapToRegistry name request
+210 silly mapToRegistry using default registry
+211 silly mapToRegistry registry https://registry.npmjs.org/
+212 silly mapToRegistry uri https://registry.npmjs.org/request
+213 silly fetchNamedPackageData sequelize
+214 silly mapToRegistry name sequelize
+215 silly mapToRegistry using default registry
+216 silly mapToRegistry registry https://registry.npmjs.org/
+217 silly mapToRegistry uri https://registry.npmjs.org/sequelize
+218 silly fetchNamedPackageData sequelize-cli
+219 silly mapToRegistry name sequelize-cli
+220 silly mapToRegistry using default registry
+221 silly mapToRegistry registry https://registry.npmjs.org/
+222 silly mapToRegistry uri https://registry.npmjs.org/sequelize-cli
+223 silly fetchNamedPackageData uuid
+224 silly mapToRegistry name uuid
+225 silly mapToRegistry using default registry
+226 silly mapToRegistry registry https://registry.npmjs.org/
+227 silly mapToRegistry uri https://registry.npmjs.org/uuid
+228 silly fetchNamedPackageData validator
+229 silly mapToRegistry name validator
+230 silly mapToRegistry using default registry
+231 silly mapToRegistry registry https://registry.npmjs.org/
+232 silly mapToRegistry uri https://registry.npmjs.org/validator
+233 verbose request uri https://registry.npmjs.org/@babel%2fplugin-transform-runtime
+234 verbose request no auth needed
+235 info attempt registry request try #1 at 11:55:04 AM
+236 verbose request id 55fe1fefefb6f34c
+237 verbose etag W/"9e245bb31119d572ee21c0b19f3ce8c3"
+238 verbose lastModified Tue, 14 Jul 2020 18:17:55 GMT
+239 http request GET https://registry.npmjs.org/@babel%2fplugin-transform-runtime
+240 verbose request uri https://registry.npmjs.org/@babel%2fcore
+241 verbose request no auth needed
+242 info attempt registry request try #1 at 11:55:04 AM
+243 verbose etag W/"45a57628d4d303bbd965279c9ff0cb1a"
+244 verbose lastModified Tue, 14 Jul 2020 18:18:26 GMT
+245 http request GET https://registry.npmjs.org/@babel%2fcore
+246 verbose request uri https://registry.npmjs.org/@babel%2fplugin-proposal-class-properties
+247 verbose request no auth needed
+248 info attempt registry request try #1 at 11:55:04 AM
+249 verbose etag W/"a40ffb4720c8e77cc6e3a2d382bdadf9"
+250 verbose lastModified Tue, 30 Jun 2020 13:13:36 GMT
+251 http request GET https://registry.npmjs.org/@babel%2fplugin-proposal-class-properties
+252 verbose request uri https://registry.npmjs.org/@babel%2fpolyfill
+253 verbose request no auth needed
+254 info attempt registry request try #1 at 11:55:04 AM
+255 verbose etag W/"e30eb84f6cba4aeb33f8f17f01a979ef"
+256 verbose lastModified Tue, 30 Jun 2020 13:11:34 GMT
+257 http request GET https://registry.npmjs.org/@babel%2fpolyfill
+258 verbose request uri https://registry.npmjs.org/@babel%2fregister
+259 verbose request no auth needed
+260 info attempt registry request try #1 at 11:55:04 AM
+261 verbose etag W/"13b126bf6a3ff196af0ae27b54d05088"
+262 verbose lastModified Tue, 14 Jul 2020 18:18:03 GMT
+263 http request GET https://registry.npmjs.org/@babel%2fregister
+264 verbose request uri https://registry.npmjs.org/@babel%2fruntime
+265 verbose request no auth needed
+266 info attempt registry request try #1 at 11:55:04 AM
+267 verbose etag W/"27abcdbed3787474c50e1504ec32b8c8"
+268 verbose lastModified Tue, 14 Jul 2020 18:18:04 GMT
+269 http request GET https://registry.npmjs.org/@babel%2fruntime
+270 verbose request uri https://registry.npmjs.org/babel-plugin-transform-runtime
+271 verbose request no auth needed
+272 info attempt registry request try #1 at 11:55:04 AM
+273 verbose etag W/"773f85ad6cefe5bf9ba0d16578b10a96"
+274 verbose lastModified Tue, 01 Jan 2019 07:38:11 GMT
+275 http request GET https://registry.npmjs.org/babel-plugin-transform-runtime
+276 verbose request uri https://registry.npmjs.org/axios
+277 verbose request no auth needed
+278 info attempt registry request try #1 at 11:55:04 AM
+279 verbose etag W/"9e710db4d459f36adbf6cdf6c4d8ef8f"
+280 verbose lastModified Wed, 15 Jul 2020 16:07:33 GMT
+281 http request GET https://registry.npmjs.org/axios
+282 verbose request uri https://registry.npmjs.org/babel-watch
+283 verbose request no auth needed
+284 info attempt registry request try #1 at 11:55:04 AM
+285 verbose etag W/"37dc67946daa9659f86f13fe3c1a64fd"
+286 verbose lastModified Mon, 04 Feb 2019 08:32:56 GMT
+287 http request GET https://registry.npmjs.org/babel-watch
+288 verbose request uri https://registry.npmjs.org/babel-cli
+289 verbose request no auth needed
+290 info attempt registry request try #1 at 11:55:04 AM
+291 verbose etag W/"a1c5d647ac9d7ae79d27ffcf90873bbe"
+292 verbose lastModified Tue, 21 May 2019 18:00:26 GMT
+293 http request GET https://registry.npmjs.org/babel-cli
+294 verbose request uri https://registry.npmjs.org/babel-preset-env
+295 verbose request no auth needed
+296 info attempt registry request try #1 at 11:55:04 AM
+297 verbose etag W/"bac62e0859724b6ca68fd681ab119889"
+298 verbose lastModified Tue, 01 Jan 2019 07:40:48 GMT
+299 http request GET https://registry.npmjs.org/babel-preset-env
+300 verbose request uri https://registry.npmjs.org/bcryptjs
+301 verbose request no auth needed
+302 info attempt registry request try #1 at 11:55:04 AM
+303 verbose etag W/"5bf13bbe12ee6064dc3ef333523aee28"
+304 verbose lastModified Fri, 01 Mar 2019 19:24:31 GMT
+305 http request GET https://registry.npmjs.org/bcryptjs
+306 verbose request uri https://registry.npmjs.org/@babel%2fpreset-env
+307 verbose request no auth needed
+308 info attempt registry request try #1 at 11:55:04 AM
+309 verbose etag W/"7ca77d4b323890e5feefce0ea42e4b0f"
+310 verbose lastModified Tue, 30 Jun 2020 13:13:48 GMT
+311 http request GET https://registry.npmjs.org/@babel%2fpreset-env
+312 verbose request uri https://registry.npmjs.org/bull
+313 verbose request no auth needed
+314 info attempt registry request try #1 at 11:55:04 AM
+315 verbose etag W/"f929ac17cbd30aea086c8df31b3a1f8d"
+316 verbose lastModified Thu, 16 Jul 2020 20:46:23 GMT
+317 http request GET https://registry.npmjs.org/bull
+318 verbose request uri https://registry.npmjs.org/cors
+319 verbose request no auth needed
+320 info attempt registry request try #1 at 11:55:04 AM
+321 verbose etag W/"767c12bdc7bec542e86f096187e83911"
+322 verbose lastModified Fri, 29 Nov 2019 09:32:44 GMT
+323 http request GET https://registry.npmjs.org/cors
+324 verbose request uri https://registry.npmjs.org/dotenv
+325 verbose request no auth needed
+326 info attempt registry request try #1 at 11:55:04 AM
+327 verbose etag W/"eb436f22633dd89c882317c4b26f3166"
+328 verbose lastModified Fri, 21 Feb 2020 20:38:27 GMT
+329 http request GET https://registry.npmjs.org/dotenv
+330 verbose request uri https://registry.npmjs.org/concurrently
+331 verbose request no auth needed
+332 info attempt registry request try #1 at 11:55:04 AM
+333 verbose etag W/"7cc8d9d9d677327381150d1a6a8ab523"
+334 verbose lastModified Sat, 25 Apr 2020 04:07:12 GMT
+335 http request GET https://registry.npmjs.org/concurrently
+336 verbose request uri https://registry.npmjs.org/fetch
+337 verbose request no auth needed
+338 info attempt registry request try #1 at 11:55:04 AM
+339 verbose etag W/"7ca57ce34a3c6f39e1ef748461f5bd66"
+340 verbose lastModified Sun, 27 May 2018 00:34:12 GMT
+341 http request GET https://registry.npmjs.org/fetch
+342 verbose request uri https://registry.npmjs.org/bluebird
+343 verbose request no auth needed
+344 info attempt registry request try #1 at 11:55:04 AM
+345 verbose etag W/"6a3dea78a56fbcf6841ed1d5025a3727"
+346 verbose lastModified Fri, 26 Jun 2020 20:54:15 GMT
+347 http request GET https://registry.npmjs.org/bluebird
+348 verbose request uri https://registry.npmjs.org/idempotent-babel-polyfill
+349 verbose request no auth needed
+350 info attempt registry request try #1 at 11:55:04 AM
+351 verbose etag W/"15ef2fb3da0ee860aa40d6ce6115ca80"
+352 verbose lastModified Thu, 06 Jun 2019 00:13:55 GMT
+353 http request GET https://registry.npmjs.org/idempotent-babel-polyfill
+354 verbose request uri https://registry.npmjs.org/express
+355 verbose request no auth needed
+356 info attempt registry request try #1 at 11:55:04 AM
+357 verbose etag W/"75df8f92097b42d791578c084af85171"
+358 verbose lastModified Fri, 26 Jun 2020 20:54:17 GMT
+359 http request GET https://registry.npmjs.org/express
+360 verbose request uri https://registry.npmjs.org/joi
+361 verbose request no auth needed
+362 info attempt registry request try #1 at 11:55:04 AM
+363 verbose etag W/"ee0fadb86a6bad9f420f7c70c84bb7be"
+364 verbose lastModified Thu, 16 Jul 2020 08:35:34 GMT
+365 http request GET https://registry.npmjs.org/joi
+366 verbose request uri https://registry.npmjs.org/make-runnable
+367 verbose request no auth needed
+368 info attempt registry request try #1 at 11:55:04 AM
+369 verbose etag W/"1792722c3c736ec550e7129a3abdce36"
+370 verbose lastModified Sun, 27 May 2018 07:19:35 GMT
+371 http request GET https://registry.npmjs.org/make-runnable
+372 verbose request uri https://registry.npmjs.org/jsonwebtoken
+373 verbose request no auth needed
+374 info attempt registry request try #1 at 11:55:04 AM
+375 verbose etag W/"01c5940f8157b53f3af88d2821c09ccd"
+376 verbose lastModified Sat, 21 Sep 2019 18:44:15 GMT
+377 http request GET https://registry.npmjs.org/jsonwebtoken
+378 verbose request uri https://registry.npmjs.org/passport
+379 verbose request no auth needed
+380 info attempt registry request try #1 at 11:55:04 AM
+381 verbose etag W/"d6301ad9a5361d64f91a74f066a8ede0"
+382 verbose lastModified Mon, 09 Dec 2019 15:49:12 GMT
+383 http request GET https://registry.npmjs.org/passport
+384 verbose request uri https://registry.npmjs.org/passport-jwt
+385 verbose request no auth needed
+386 info attempt registry request try #1 at 11:55:04 AM
+387 verbose etag W/"03942b203b72a1cb599b0dbbe8d52016"
+388 verbose lastModified Sat, 05 Jan 2019 02:45:05 GMT
+389 http request GET https://registry.npmjs.org/passport-jwt
+390 verbose request uri https://registry.npmjs.org/path
+391 verbose request no auth needed
+392 info attempt registry request try #1 at 11:55:04 AM
+393 verbose etag W/"84776947ad4fdb086f59caf507bf0533"
+394 verbose lastModified Sun, 27 May 2018 11:56:57 GMT
+395 http request GET https://registry.npmjs.org/path
+396 verbose request uri https://registry.npmjs.org/moment
+397 verbose request no auth needed
+398 info attempt registry request try #1 at 11:55:04 AM
+399 verbose etag W/"ae722cd6d891dfbd3b823fe99a1b1619"
+400 verbose lastModified Fri, 26 Jun 2020 20:54:16 GMT
+401 http request GET https://registry.npmjs.org/moment
+402 verbose request uri https://registry.npmjs.org/pg-hstore
+403 verbose request no auth needed
+404 info attempt registry request try #1 at 11:55:04 AM
+405 verbose etag W/"83cabd8a2340481d89eb42da6db01a9d"
+406 verbose lastModified Mon, 03 Jun 2019 20:41:34 GMT
+407 http request GET https://registry.npmjs.org/pg-hstore
+408 verbose request uri https://registry.npmjs.org/python-bridge
+409 verbose request no auth needed
+410 info attempt registry request try #1 at 11:55:04 AM
+411 verbose etag W/"301e0210df6b5e1036d627b18170ce18"
+412 verbose lastModified Thu, 21 Mar 2019 03:11:10 GMT
+413 http request GET https://registry.npmjs.org/python-bridge
+414 verbose request uri https://registry.npmjs.org/python-shell
+415 verbose request no auth needed
+416 info attempt registry request try #1 at 11:55:04 AM
+417 verbose etag W/"9f5c338abefacca9243a6a922fbf42b3"
+418 verbose lastModified Tue, 19 May 2020 14:28:40 GMT
+419 http request GET https://registry.npmjs.org/python-shell
+420 verbose request uri https://registry.npmjs.org/pg
+421 verbose request no auth needed
+422 info attempt registry request try #1 at 11:55:04 AM
+423 verbose etag W/"ae69f7426c0d52987ffc5f67d6c0597c"
+424 verbose lastModified Thu, 09 Jul 2020 15:41:25 GMT
+425 http request GET https://registry.npmjs.org/pg
+426 verbose request uri https://registry.npmjs.org/redis
+427 verbose request no auth needed
+428 info attempt registry request try #1 at 11:55:04 AM
+429 verbose etag W/"f06db0db4ba63e13652caa0b11eebb7f"
+430 verbose lastModified Fri, 26 Jun 2020 20:55:24 GMT
+431 http request GET https://registry.npmjs.org/redis
+432 verbose request uri https://registry.npmjs.org/request
+433 verbose request no auth needed
+434 info attempt registry request try #1 at 11:55:04 AM
+435 verbose etag W/"f6a50554348a0710692c70f1bd6574ab"
+436 verbose lastModified Mon, 11 May 2020 15:19:07 GMT
+437 http request GET https://registry.npmjs.org/request
+438 verbose request uri https://registry.npmjs.org/sequelize-cli
+439 verbose request no auth needed
+440 info attempt registry request try #1 at 11:55:04 AM
+441 verbose etag W/"3049191ff4817fc23a3ffbc7cc5a49e7"
+442 verbose lastModified Sun, 05 Jul 2020 05:57:51 GMT
+443 http request GET https://registry.npmjs.org/sequelize-cli
+444 verbose request uri https://registry.npmjs.org/uuid
+445 verbose request no auth needed
+446 info attempt registry request try #1 at 11:55:04 AM
+447 verbose etag W/"52d18c06f92f28c41cce34b5005c161c"
+448 verbose lastModified Wed, 22 Jul 2020 22:29:01 GMT
+449 http request GET https://registry.npmjs.org/uuid
+450 verbose request uri https://registry.npmjs.org/validator
+451 verbose request no auth needed
+452 info attempt registry request try #1 at 11:55:04 AM
+453 verbose etag W/"eed03001384b4f1a2f0e29d60e2f9f84"
+454 verbose lastModified Thu, 11 Jun 2020 20:55:52 GMT
+455 http request GET https://registry.npmjs.org/validator
+456 verbose request uri https://registry.npmjs.org/form-data
+457 verbose request no auth needed
+458 info attempt registry request try #1 at 11:55:06 AM
+459 verbose etag W/"5e211bf0fabf58f7b2a855c8b4ce28a4"
+460 verbose lastModified Wed, 06 Nov 2019 07:57:03 GMT
+461 http request GET https://registry.npmjs.org/form-data
+462 verbose request uri https://registry.npmjs.org/body-parser
+463 verbose request no auth needed
+464 info attempt registry request try #1 at 11:55:06 AM
+465 verbose etag W/"69165633b8917311c8a5b29b5aa3a438"
+466 verbose lastModified Fri, 29 Nov 2019 09:32:45 GMT
+467 http request GET https://registry.npmjs.org/body-parser
+468 verbose request uri https://registry.npmjs.org/sequelize
+469 verbose request no auth needed
+470 info attempt registry request try #1 at 11:55:06 AM
+471 verbose etag W/"ac6f6f4d193f0a7edb98be417ac1ac30"
+472 verbose lastModified Sat, 11 Jul 2020 14:29:45 GMT
+473 http request GET https://registry.npmjs.org/sequelize
+474 http 304 https://registry.npmjs.org/axios
+475 verbose headers { date: 'Sun, 26 Jul 2020 18:55:06 GMT',
+475 verbose headers   connection: 'keep-alive',
+475 verbose headers   'set-cookie':
+475 verbose headers    [ '__cfduid=ddc505d914d42495aca35ff84beebb92f1595789706; expires=Tue, 25-Aug-20 18:55:06 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+475 verbose headers   'cf-ray': '5b905544498717db-DXB',
+475 verbose headers   age: '5717',
+475 verbose headers   'cache-control': 'public, max-age=300',
+475 verbose headers   etag: '"9e710db4d459f36adbf6cdf6c4d8ef8f"',
+475 verbose headers   'last-modified': 'Wed, 15 Jul 2020 16:07:33 GMT',
+475 verbose headers   vary: 'Accept-Encoding',
+475 verbose headers   'cf-cache-status': 'HIT',
+475 verbose headers   'cf-request-id': '042e139eb0000017dbd4986200000001',
+475 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+475 verbose headers   server: 'cloudflare' }
+476 silly get cb [ 304,
+476 silly get   { date: 'Sun, 26 Jul 2020 18:55:06 GMT',
+476 silly get     connection: 'keep-alive',
+476 silly get     'set-cookie':
+476 silly get      [ '__cfduid=ddc505d914d42495aca35ff84beebb92f1595789706; expires=Tue, 25-Aug-20 18:55:06 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+476 silly get     'cf-ray': '5b905544498717db-DXB',
+476 silly get     age: '5717',
+476 silly get     'cache-control': 'public, max-age=300',
+476 silly get     etag: '"9e710db4d459f36adbf6cdf6c4d8ef8f"',
+476 silly get     'last-modified': 'Wed, 15 Jul 2020 16:07:33 GMT',
+476 silly get     vary: 'Accept-Encoding',
+476 silly get     'cf-cache-status': 'HIT',
+476 silly get     'cf-request-id': '042e139eb0000017dbd4986200000001',
+476 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+476 silly get     server: 'cloudflare' } ]
+477 verbose etag https://registry.npmjs.org/axios from cache
+478 verbose get saving axios to /home/olivier/.npm/registry.npmjs.org/axios/.cache.json
+479 http 304 https://registry.npmjs.org/@babel%2fruntime
+480 verbose headers { date: 'Sun, 26 Jul 2020 18:55:06 GMT',
+480 verbose headers   connection: 'keep-alive',
+480 verbose headers   'set-cookie':
+480 verbose headers    [ '__cfduid=dc4cc61c338629775b7559d7fd1f5787e1595789706; expires=Tue, 25-Aug-20 18:55:06 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+480 verbose headers   'cf-ray': '5b9055444a3b12c2-DXB',
+480 verbose headers   age: '719',
+480 verbose headers   'cache-control': 'public, max-age=300',
+480 verbose headers   etag: '"27abcdbed3787474c50e1504ec32b8c8"',
+480 verbose headers   'last-modified': 'Tue, 14 Jul 2020 18:18:04 GMT',
+480 verbose headers   vary: 'Accept-Encoding',
+480 verbose headers   'cf-cache-status': 'HIT',
+480 verbose headers   'cf-request-id': '042e139eae000012c26101d200000001',
+480 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+480 verbose headers   server: 'cloudflare' }
+481 silly get cb [ 304,
+481 silly get   { date: 'Sun, 26 Jul 2020 18:55:06 GMT',
+481 silly get     connection: 'keep-alive',
+481 silly get     'set-cookie':
+481 silly get      [ '__cfduid=dc4cc61c338629775b7559d7fd1f5787e1595789706; expires=Tue, 25-Aug-20 18:55:06 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+481 silly get     'cf-ray': '5b9055444a3b12c2-DXB',
+481 silly get     age: '719',
+481 silly get     'cache-control': 'public, max-age=300',
+481 silly get     etag: '"27abcdbed3787474c50e1504ec32b8c8"',
+481 silly get     'last-modified': 'Tue, 14 Jul 2020 18:18:04 GMT',
+481 silly get     vary: 'Accept-Encoding',
+481 silly get     'cf-cache-status': 'HIT',
+481 silly get     'cf-request-id': '042e139eae000012c26101d200000001',
+481 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+481 silly get     server: 'cloudflare' } ]
+482 verbose etag https://registry.npmjs.org/@babel%2fruntime from cache
+483 verbose get saving @babel/runtime to /home/olivier/.npm/registry.npmjs.org/_40babel_252fruntime/.cache.json
+484 silly resolveWithNewModule axios@0.19.2 checking installable status
+485 silly cache add args [ 'axios@^0.19.2', null ]
+486 verbose cache add spec axios@^0.19.2
+487 silly cache add parsed spec Result {
+487 silly cache add   raw: 'axios@^0.19.2',
+487 silly cache add   scope: null,
+487 silly cache add   name: 'axios',
+487 silly cache add   rawSpec: '^0.19.2',
+487 silly cache add   spec: '>=0.19.2 <0.20.0',
+487 silly cache add   type: 'range' }
+488 silly addNamed axios@>=0.19.2 <0.20.0
+489 verbose addNamed ">=0.19.2 <0.20.0" is a valid semver range for axios
+490 silly addNameRange { name: 'axios', range: '>=0.19.2 <0.20.0', hasData: false }
+491 silly mapToRegistry name axios
+492 silly mapToRegistry using default registry
+493 silly mapToRegistry registry https://registry.npmjs.org/
+494 silly mapToRegistry uri https://registry.npmjs.org/axios
+495 verbose addNameRange registry:https://registry.npmjs.org/axios not in flight; fetching
+496 verbose stack Error: Missing required argument #1
+496 verbose stack     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+496 verbose stack     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+496 verbose stack     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+496 verbose stack     at /usr/share/npm/lib/install/deps.js:457:7
+496 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+496 verbose stack     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+496 verbose stack     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+496 verbose stack     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+496 verbose stack     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+496 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+497 verbose cwd /home/olivier/Desktop/Projects/codemade-API
+498 error Linux 4.18.0-15-generic
+499 error argv "/usr/bin/node" "/usr/bin/npm" "install" "--no-optional"
+500 error node v8.10.0
+501 error npm  v3.5.2
+502 error code EMISSINGARG
+503 error typeerror Error: Missing required argument #1
+503 error typeerror     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+503 error typeerror     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+503 error typeerror     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+503 error typeerror     at /usr/share/npm/lib/install/deps.js:457:7
+503 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+503 error typeerror     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+503 error typeerror     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+503 error typeerror     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+503 error typeerror     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+503 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+504 error typeerror This is an error with npm itself. Please report this error at:
+504 error typeerror     <http://github.com/npm/npm/issues>
+505 verbose exit [ 1, true ]
