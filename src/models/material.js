@@ -5,21 +5,25 @@ module.exports = (sequelize, DataTypes) => {
     {
       materialUrl: {
         type: DataTypes.STRING(1024),
-        allowNull: false
-      }
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.STRING(1024),
+        allowNull: false,
+      },
     },
     {}
   );
 
-  Material.associate = models => {
+  Material.associate = (models) => {
     // associations can be defined here
     Material.belongsTo(models.User, {
       foreignKey: "createdUserId",
-      as: "owner"
+      as: "owner",
     });
     Material.belongsTo(models.Courses, {
       foreignKey: "courseId",
-      as: "ownerCourse"
+      as: "ownerCourse",
     });
   };
 

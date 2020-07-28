@@ -7,6 +7,7 @@ const validateModule = {
       title: Joi.string().trim().min(6).max(255).required(),
       body: Joi.string().trim().min(6).max(255).required(),
       courseId: Joi.number().integer().max(255).required(),
+      header: Joi.boolean().required(),
     });
     const { value, error } = Joi.validate(req.body, schema);
     if (error && error.details) {

@@ -4,9 +4,7 @@ import dotenv from "dotenv";
 import AuthRoutes from "./routes/AuthRoutes";
 import CourseRoutes from "./routes/CourseRoutes";
 import ModuleRoutes from "./routes/ModuleRoutes";
-import ChapterRoutes from "./routes/ChapterRoutes";
 import CommentRoutes from "./routes/CommentRoutes";
-import VideoRoutes from "./routes/VideoRoutes";
 import MaterialRoutes from "./routes/MaterialRoutes";
 import RateRoutes from "./routes/RateRoutes";
 
@@ -33,9 +31,7 @@ app.use(bodyParser.json());
 app.use("/api/auth", AuthRoutes);
 app.use("/api/course", CourseRoutes);
 app.use("/api/module", ModuleRoutes);
-app.use("/api/chapter", ChapterRoutes);
 app.use("/api/comment", CommentRoutes);
-app.use("/api/video", VideoRoutes);
 app.use("/api/material", MaterialRoutes);
 app.use("/api/rate", RateRoutes);
 

@@ -40,7 +40,7 @@ class CourseController {
       }
       const fsReadFile = await readFilePromise(image.path);
       var s3bucket = new aws.S3({
-        params: { Bucket: "course-videos-architectt" },
+        params: { Bucket: "course-image-architectt" },
       });
       await s3bucket.createBucket();
       var params = {
@@ -66,6 +66,7 @@ class CourseController {
         data: createCourse,
       });
     } catch (error) {
+      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });

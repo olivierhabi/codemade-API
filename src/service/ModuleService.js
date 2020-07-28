@@ -2,13 +2,22 @@ import database from "../models";
 
 class ModuleService {
   static async addModule(newModule, next) {
-    const { title, body, courseId, createdUserId } = newModule;
+    const {
+      title,
+      body,
+      courseId,
+      videoUrl,
+      header,
+      createdUserId,
+    } = newModule;
     try {
       return await database.Module.create({
         title,
         body,
+        videoUrl,
+        header,
         courseId,
-        createdUserId
+        createdUserId,
       });
     } catch (error) {
       throw error;
@@ -20,8 +29,8 @@ class ModuleService {
     try {
       return await database.Module.findAll({
         where: {
-          courseId: id
-        }
+          courseId: id,
+        },
       });
     } catch (error) {
       throw error;

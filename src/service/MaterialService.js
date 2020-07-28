@@ -2,13 +2,14 @@ import database from "../models";
 
 class MaterialService {
   static async addMaterial(newMaterial, next) {
-    const { courseId, materialUrl, createdUserId } = newMaterial;
+    const { courseId, description, materialUrl, createdUserId } = newMaterial;
 
     try {
       return await database.Material.create({
         materialUrl,
+        description,
         createdUserId,
-        courseId
+        courseId,
       });
     } catch (error) {
       throw error;
@@ -20,8 +21,8 @@ class MaterialService {
     try {
       return await database.Material.findOne({
         where: {
-          id
-        }
+          id,
+        },
       });
     } catch (error) {
       throw error;
@@ -33,8 +34,8 @@ class MaterialService {
     try {
       return await database.Material.findAll({
         where: {
-          courseId: id
-        }
+          courseId: id,
+        },
       });
     } catch (error) {
       throw error;
