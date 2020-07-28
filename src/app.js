@@ -9,7 +9,6 @@ import CommentRoutes from "./routes/CommentRoutes";
 import VideoRoutes from "./routes/VideoRoutes";
 import MaterialRoutes from "./routes/MaterialRoutes";
 import RateRoutes from "./routes/RateRoutes";
-import FileRoutes from "./routes/FileRoutes";
 
 import models from "./models";
 
@@ -39,7 +38,6 @@ app.use("/api/comment", CommentRoutes);
 app.use("/api/video", VideoRoutes);
 app.use("/api/material", MaterialRoutes);
 app.use("/api/rate", RateRoutes);
-app.use("/api/file-upload", FileRoutes);
 
 //Server start
 app.get("/", (req, res) => {

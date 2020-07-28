@@ -1,6 +1,14 @@
 import "@babel/polyfill";
 import CourseService from "../service/CourseService";
 import AuthService from "../service/AuthService";
+import aws from "aws-sdk";
+import readFilePromise from "fs-readfile-promise";
+
+aws.config.update({
+  secretAccessKey: process.env.AWS_SECRET_ACCESS,
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  region: "eu-north-1",
+});
 
 class CourseController {
   /**
@@ -10,7 +18,9 @@ class CourseController {
    * @return {object} course
    */
   static async Create(req, res) {
-    const { title, body, courseType, imageUrl, features, price } = req.body;
+    const { title, body, courseType, features, price } = req.courseData;
+
+    const image = req.files.image;
 
     const { id } = req.user;
     try {
@@ -22,6 +32,25 @@ class CourseController {
           message: "Please login to create course",
         });
       }
+      if (image === undefined) {
+        return res.status(400).send({
+          status: 400,
+          message: "Please upload Image",
+        });
+      }
+      const fsReadFile = await readFilePromise(image.path);
+      var s3bucket = new aws.S3({
+        params: { Bucket: "course-videos-architectt" },
+      });
+      await s3bucket.createBucket();
+      var params = {
+        Key: `${Date.now().toString()}-${image.originalFilename}`,
+        Body: fsReadFile,
+        ACL: "public-read",
+      };
+      const datas = await s3bucket.upload(params).promise();
+      const imageUrl = datas.Location;
+
       const createCourse = await CourseService.addCourse({
         title: title,
         body: body,
@@ -37,7 +66,6 @@ class CourseController {
         data: createCourse,
       });
     } catch (error) {
-      console.log(error);
       return res
         .status(500)
         .send({ status: 500, message: "INTERNAL_SERVER ERROR" });
